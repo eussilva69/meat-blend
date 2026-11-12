@@ -1,0 +1,13 @@
+{
+  "name": "meat-blend",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Meat Blend - Site institucional e landing page em Next.js",
+  "scripts": {
+    "dev": "npm --prefix nextjs run dev",
+    "build": "npm --prefix nextjs run build",
+    "start": "npm --prefix nextjs run start",
+    "lint": "npm --prefix nextjs run lint",
+    "typecheck": "npm --prefix nextjs run typecheck"
+  }
+}

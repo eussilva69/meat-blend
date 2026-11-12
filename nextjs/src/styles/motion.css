@@ -1,0 +1,21 @@
+/* ---------- Animação de entrada ---------- */
+/* O conteúdo nasce VISÍVEL (HTML do servidor e navegação sem JS). O componente <Reveal>
+   só marca data-reveal="pending" depois da hidratação, e apenas em elementos que ainda
+   estão fora da tela; ao entrar na viewport passa para data-reveal="in". */
+[data-reveal="pending"] { opacity: 0; transform: translateY(26px); }
+[data-reveal="pending"], [data-reveal="in"] { transition: opacity .9s var(--ease), transform .9s var(--ease); transition-delay: var(--d, 0s); }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .marquee__track { animation: none; }
+  .marquee__toggle { display: none; }
+  [data-reveal] { opacity: 1; transform: none; transition: none; }
+  .nav.is-open { opacity: 1 !important; visibility: visible !important; }
+  *, *::before, *::after { transition: none !important; }
+}
+
+/* ---------- Impressão (FX-32) ---------- */
+@media print {
+  [data-reveal] { opacity: 1 !important; transform: none !important; }
+  .site-header, .mobile-cta, .marquee, .marquee__toggle { display: none; }
+}

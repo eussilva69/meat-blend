@@ -1,0 +1,13 @@
+/* ==========================================================================
+   MEAT BLEND — estilos do site e da landing page
+   Porte 1:1 de estatico/assets/css/style.css, dividido por área.
+   A ORDEM dos imports importa (cascata): não reordene sem revisar.
+   ========================================================================== */
+@import '../styles/tokens.css';
+@import '../styles/base.css';
+@import '../styles/header.css';
+@import '../styles/sections.css';
+@import '../styles/forms.css';
+@import '../styles/pages.css';
+@import '../styles/motion.css';
+@import '../styles/responsive.css';

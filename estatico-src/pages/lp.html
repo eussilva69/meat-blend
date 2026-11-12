@@ -1,0 +1,323 @@
+title: Amostra de blend para hamburgueria | Meat Blend
+description: Teste na sua chapa: blend de carne bovina com gordura padronizada, gramatura exata e entrega congelada. Peça sua amostra pelo WhatsApp em 30 segundos.
+active: none
+canonical: lp/
+layout: lp
+base: ../
+---
+<header class="site-header" data-header>
+  <div class="container site-header__bar">
+    <span class="brand"><img src="../assets/img/marca/logotipo-creme.svg" alt="meat blend" width="118" height="48"></span>
+    <a class="btn btn--outline-light btn--sm" href="https://wa.me/5500000000000?text=Ol%C3%A1%2C%20Meat%20Blend!%20Vim%20pela%20p%C3%A1gina%20de%20amostras." target="_blank" rel="noopener"><svg class="icon" aria-hidden="true"><use href="#i-wa"/></svg><span class="btn__label">Chamar no WhatsApp</span><span class="sr-only"> (abre em nova aba)</span></a>
+  </div>
+</header>
+
+<main id="conteudo">
+
+  <!-- HERO + FORMULÁRIO -->
+  <section class="lp-hero dark">
+    <svg class="iso-bg" viewBox="0 0 96 96" aria-hidden="true"><use href="#iso"/></svg>
+    <div class="container lp-hero__grid">
+      <div>
+        <p class="eyebrow"><span class="eyebrow__num" aria-hidden="true">/</span>Para hamburguerias, dark kitchens e food trucks</p>
+        <h1 class="display" style="margin-top:24px">Seu burger <em>igual</em> em todo pedido.</h1>
+        <p class="lead">Blend de carne bovina com gordura padronizada, porcionado na gramatura exata e entregue congelado. Peça uma amostra e teste na sua chapa antes de fechar.</p>
+        <ul class="checklist checklist--sm">
+          <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><strong>Mesmo sabor e ponto de segunda a sábado</strong></li>
+          <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><strong>CMV fechado: você sabe quanto custa cada burger</strong></li>
+          <li><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg><strong>Nada de moer, pesar e modelar na cozinha</strong></li>
+        </ul>
+      </div>
+
+      <div class="form-card" id="amostra">
+        <div class="form-card__head">
+          <h2>Peça sua amostra</h2>
+          <p>Leva 30 segundos. O WhatsApp abre com a sua mensagem pronta: é só tocar em enviar.</p>
+          <p class="form__required">Todos os campos são obrigatórios.</p>
+        </div>
+        <form class="form" data-wa-form novalidate data-subject="Pedido de amostra (landing page)" data-page="Landing page de amostra" data-intro="Olá, Meat Blend! Vim pela página de amostras e quero testar os blends na minha chapa.">
+          <div class="form__row">
+            <div class="field">
+              <label for="l-nome">Seu nome</label>
+              <input id="l-nome" name="nome" data-label="Nome" type="text" autocomplete="name" required data-error="Diga como podemos te chamar.">
+            </div>
+            <div class="field">
+              <label for="l-negocio">Nome do negócio</label>
+              <input id="l-negocio" name="negocio" data-label="Negócio" type="text" autocomplete="organization" placeholder="Hamburgueria, dark kitchen, food truck…" required data-error="Informe o nome do negócio (ou do projeto, se ainda vai abrir).">
+            </div>
+          </div>
+          <div class="field">
+            <label for="l-cidade">Cidade / UF</label>
+            <input id="l-cidade" name="cidade" data-label="Cidade" type="text" autocomplete="address-level2" placeholder="Ex.: Curitiba / PR" required data-error="Informe cidade e UF para a gente checar a entrega.">
+          </div>
+          <div class="field">
+            <label for="l-volume">Quantos burgers você vende por mês?</label>
+            <select id="l-volume" name="volume" data-label="Burgers por mês" required data-error="Escolha uma faixa. Se ainda vai abrir, marque &quot;Ainda vou abrir&quot;.">
+              <option value="">Selecione</option>
+              <option>Até 500</option>
+              <option>De 500 a 1.500</option>
+              <option>De 1.500 a 3.000</option>
+              <option>Mais de 3.000</option>
+              <option>Ainda vou abrir</option>
+            </select>
+          </div>
+          <button class="btn btn--red btn--block" type="submit"><svg class="icon" aria-hidden="true"><use href="#i-wa"/></svg>Pedir amostra pelo WhatsApp</button>
+          <p class="form__note">Amostra [a confirmar: grátis / R$ X] · Sem compromisso de compra [a confirmar] · Resposta [a confirmar: em até X horas úteis]. Seus dados servem só para este contato (<a href="../privacidade.html" target="_blank" rel="noopener">privacidade</a><span class="sr-only">, abre em nova aba</span>). Sem WhatsApp neste aparelho? Escreva para <a href="mailto:contato@meatblend.com.br">contato@meatblend.com.br</a>.</p>
+          {{formstatus}}
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <div class="marquee">
+    <div class="marquee__track" aria-hidden="true">
+      <span>hamburguerias</span><i>/</i><span>dark kitchens</span><i>/</i><span>food trucks</span><i>/</i><span>restaurantes</span><i>/</i>
+      <span>hamburguerias</span><i>/</i><span>dark kitchens</span><i>/</i><span>food trucks</span><i>/</i><span>restaurantes</span><i>/</i>
+    </div>
+    <button class="marquee__toggle" type="button" aria-pressed="false"><span class="sr-only">Pausar a faixa animada</span><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M7 5h3v14H7zM14 5h3v14h-3z"/></svg></button>
+  </div>
+
+  <!-- O PROBLEMA -->
+  <section class="section bg-paper" aria-labelledby="dores-titulo">
+    <div class="container">
+      <div class="section-head" data-reveal>
+        <div>
+          <p class="eyebrow"><span class="eyebrow__num" aria-hidden="true">/</span>O problema</p>
+          <h2 class="h2" id="dores-titulo">Se isso acontece na sua cozinha, o problema não é o chapeiro.</h2>
+        </div>
+      </div>
+      <ul class="cards">
+        <li data-reveal><div class="pain"><svg class="icon" aria-hidden="true"><use href="#i-alert"/></svg><h3>Cada lote, um burger diferente</h3><p>A gordura muda, o ponto muda e o cliente reclama. E ninguém sabe explicar por quê.</p></div></li>
+        <li data-reveal style="--d:.06s"><div class="pain"><svg class="icon" aria-hidden="true"><use href="#i-scale"/></svg><h3>Peso no olho, margem no escuro</h3><p>Sem gramatura exata, o custo de cada burger é um chute. E o lucro também.</p></div></li>
+        <li data-reveal style="--d:.12s"><div class="pain"><svg class="icon" aria-hidden="true"><use href="#i-clock"/></svg><h3>Equipe moendo e pesando</h3><p>Horas toda semana moendo, pesando e modelando carne, em vez de produzir e vender.</p></div></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- COMO FUNCIONA -->
+  <section class="section bg-char" aria-labelledby="lp-como-titulo">
+    <div class="container">
+      <div class="section-head" data-reveal>
+        <div>
+          <p class="eyebrow"><span class="eyebrow__num" aria-hidden="true">/</span>Como funciona</p>
+          <h2 class="h2" id="lp-como-titulo">Da amostra ao pedido, em três passos.</h2>
+        </div>
+        <a class="btn btn--red" href="#amostra">Pedir amostra</a>
+      </div>
+      <ol class="steps steps--3">
+        <li class="step" data-reveal><span class="step__num">01</span><h3>Conte sua operação</h3><p>Preencha o formulário ou chame no WhatsApp: estilo de burger, volume e cidade. Leva 30 segundos.</p></li>
+        <li class="step" data-reveal style="--d:.06s"><span class="step__num">02</span><h3>Teste na sua chapa</h3><p>A gente indica os blends certos e envia a amostra [a confirmar: prazo e forma de envio]. Você testa com a sua equipe, no seu ponto.</p></li>
+        <li class="step" data-reveal style="--d:.12s"><span class="step__num">03</span><h3>Receba no seu ritmo</h3><p>Aprovou? A gente combina gramatura, formato e frequência de entrega. Todo pedido chega no mesmo padrão.</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- BLENDS -->
+  <section class="section bg-paper" aria-labelledby="lp-blends-titulo">
+    <div class="container">
+      <div class="section-head" data-reveal>
+        <div>
+          <p class="eyebrow"><span class="eyebrow__num" aria-hidden="true">/</span>Blends</p>
+          <h2 class="h2" id="lp-blends-titulo">Escolha por onde começar.</h2>
+          <p class="lead">Não sabe qual? Conte a sua operação e a gente indica.</p>
+        </div>
+        <a class="btn btn--red" href="#amostra">Pedir amostra</a>
+      </div>
+      <ul class="blend-grid" tabindex="0" role="region" aria-label="Blends (role para o lado para ver todos)">
+        <li data-reveal>
+          <article class="blend-card">
+            <div class="blend-card__media"><!--pic:burger-classico|(max-width: 640px) 80vw, (max-width: 1100px) 46vw, 300px||loading="lazy"--></div>
+            <div class="blend-card__body">
+              <div class="blend-card__top"><h3>Clássico</h3></div>
+              <p class="blend-card__cuts">Acém + peito. O coringa do cardápio.</p>
+              <div><div class="ratio" aria-hidden="true"><span class="ratio__lean" style="--v:80%"></span></div><p class="ratio__legend"><span>80% carne</span><span>20% gordura</span></p></div>
+              <ul class="chips" aria-label="Gramaturas"><li>120 g</li><li>150 g</li><li>180 g</li></ul>
+            </div>
+          </article>
+        </li>
+        <li data-reveal style="--d:.06s">
+          <article class="blend-card">
+            <div class="blend-card__media"><!--pic:burger-triplo|(max-width: 640px) 80vw, (max-width: 1100px) 46vw, 300px||loading="lazy"--></div>
+            <div class="blend-card__body">
+              <div class="blend-card__top"><h3>Costela</h3></div>
+              <p class="blend-card__cuts">Costela + acém. Alto, macio e suculento.</p>
+              <div><div class="ratio" aria-hidden="true"><span class="ratio__lean" style="--v:77%"></span></div><p class="ratio__legend"><span>77% carne</span><span>23% gordura</span></p></div>
+              <ul class="chips" aria-label="Gramaturas"><li>150 g</li><li>180 g</li><li>200 g</li></ul>
+            </div>
+          </article>
+        </li>
+        <li data-reveal style="--d:.12s">
+          <article class="blend-card">
+            <div class="blend-card__media"><!--pic:smash-linha|(max-width: 640px) 80vw, (max-width: 1100px) 46vw, 300px||loading="lazy"--></div>
+            <div class="blend-card__body">
+              <div class="blend-card__top"><h3>Smash</h3></div>
+              <p class="blend-card__cuts">Bolinhas prontas para esmagar. Crosta em segundos.</p>
+              <div><div class="ratio" aria-hidden="true"><span class="ratio__lean" style="--v:80%"></span></div><p class="ratio__legend"><span>80% carne</span><span>20% gordura</span></p></div>
+              <ul class="chips" aria-label="Gramaturas"><li>80 g</li><li>100 g</li></ul>
+            </div>
+          </article>
+        </li>
+        <li data-reveal style="--d:.18s">
+          <article class="blend-card">
+            <div class="blend-card__media"><!--pic:burger-gourmet|(max-width: 640px) 80vw, (max-width: 1100px) 46vw, 300px||loading="lazy"--></div>
+            <div class="blend-card__body">
+              <div class="blend-card__top"><h3>Fraldinha</h3></div>
+              <p class="blend-card__cuts">Fraldinha + costela + peito. Sabor de churrasco.</p>
+              <div><div class="ratio" aria-hidden="true"><span class="ratio__lean" style="--v:78%"></span></div><p class="ratio__legend"><span>78% carne</span><span>22% gordura</span></p></div>
+              <ul class="chips" aria-label="Gramaturas"><li>150 g</li><li>180 g</li></ul>
+            </div>
+          </article>
+        </li>
+      </ul>
+      <div class="blend-banner bg-red" data-reveal>
+        <img src="../assets/img/marca/monograma-creme.svg" alt="" width="96" height="87" loading="lazy">
+        <div><h3>Sob medida</h3><p>Receita desenvolvida com você, exclusiva da sua casa.</p></div>
+        <a class="link-arrow" href="#amostra">Pedir amostra <svg class="icon" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- A DIFERENÇA -->
+  <section class="section bg-char" aria-labelledby="dif-titulo">
+    <div class="container">
+      <div class="section-head" data-reveal>
+        <div>
+          <p class="eyebrow"><span class="eyebrow__num" aria-hidden="true">/</span>A diferença</p>
+          <h2 class="h2" id="dif-titulo">Do jeito de sempre <span class="vs">vs.</span><br>meat blend</h2>
+        </div>
+      </div>
+      <div class="compare-wrap" data-reveal>
+        <table class="compare">
+          <caption class="sr-only">Comparativo entre moer e porcionar a carne na casa e usar o blend da meat blend</caption>
+          <thead>
+            <tr><th scope="col"><span class="sr-only">Critério</span></th><th scope="col">Do jeito de sempre</th><th scope="col">meat blend</th></tr>
+          </thead>
+          <tbody>
+            <tr><th scope="row">Gordura</th><td><span><svg class="icon" aria-hidden="true"><use href="#i-x"/></svg>Muda conforme a peça do dia</span></td><td><span><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>Padronizada por ficha técnica</span></td></tr>
+            <tr><th scope="row">Gramatura</th><td><span><svg class="icon" aria-hidden="true"><use href="#i-x"/></svg>No olho ou burger a burger na balança</span></td><td><span><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>Porcionada na gramatura exata</span></td></tr>
+            <tr><th scope="row">Mão de obra</th><td><span><svg class="icon" aria-hidden="true"><use href="#i-x"/></svg>Equipe moendo, pesando e modelando</span></td><td><span><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>Chega pronto para a chapa</span></td></tr>
+            <tr><th scope="row">Custo por burger</th><td><span><svg class="icon" aria-hidden="true"><use href="#i-x"/></svg>Difícil de fechar: aparas, perdas e horas</span></td><td><span><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>Fechado: preço do kg × gramatura</span></td></tr>
+            <tr><th scope="row">Receita</th><td><span><svg class="icon" aria-hidden="true"><use href="#i-x"/></svg>A mesma de todo mundo</span></td><td><span><svg class="icon" aria-hidden="true"><use href="#i-check"/></svg>Pode ser exclusiva da sua casa</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- POR QUE CONFIAR -->
+  <section class="section bg-red" aria-labelledby="lp-pilares-titulo">
+    <div class="container">
+      <div class="section-head" data-reveal>
+        <div>
+          <p class="eyebrow"><span class="eyebrow__num" aria-hidden="true">/</span>Por que confiar</p>
+          <h2 class="h2" id="lp-pilares-titulo">Exclusiva, rigorosa e segura. Na prática.</h2>
+        </div>
+      </div>
+      <ul class="pillars">
+        <li class="pillar" data-reveal><h3>Exclusiva</h3><p>Linha pronta para começar rápido, ou receita sob medida que fica só com a sua casa.</p></li>
+        <li class="pillar" data-reveal style="--d:.08s"><h3>Rigorosa</h3><p>Ficha técnica para cada blend e porção na gramatura combinada [a confirmar: tolerância ±X g]. O mesmo burger em todo lote.</p></li>
+        <li class="pillar" data-reveal style="--d:.16s"><h3>Segura</h3><p>Inspeção oficial [SIF/SIE/SIM nº 0000], lote e validade em cada embalagem e cadeia de frio até a sua cozinha.</p></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- DÚVIDAS -->
+  <section class="section bg-paper" aria-labelledby="lp-faq-titulo">
+    <div class="container split split--top split--wide-left">
+      <div class="stack" data-reveal>
+        <p class="eyebrow"><span class="eyebrow__num" aria-hidden="true">/</span>Dúvidas</p>
+        <h2 class="h2" id="lp-faq-titulo">Antes de pedir a amostra.</h2>
+      </div>
+      <div class="faq" data-reveal style="--d:.08s">
+        <details>
+          <summary>Como funciona a amostra?</summary>
+          <div class="faq__answer"><p>Você conta como é a sua operação (estilo de burger, volume e equipamento) e a gente indica os blends mais adequados. A amostra chega [a confirmar: por entrega própria / visita do comercial / transportadora], com [a confirmar: quantidade, ex.: X discos de cada blend indicado], para você testar na sua chapa, com a sua equipe.</p></div>
+        </details>
+        <details>
+          <summary>A amostra é paga?</summary>
+          <div class="faq__answer"><p>[a confirmar: é gratuita / custa R$ X, abatidos no primeiro pedido / o frete fica por conta de quem pede]. Em qualquer caso, você só fecha pedido depois de testar.</p></div>
+        </details>
+        <details>
+          <summary>Quanto custa o blend?</summary>
+          <div class="faq__answer"><p>Depende do blend, do formato, da gramatura e do volume por mês. Peça a tabela pelo WhatsApp e receba os valores e as condições para a sua região.</p></div>
+        </details>
+        <details>
+          <summary>Qual é o pedido mínimo?</summary>
+          <div class="faq__answer"><p>[a confirmar: X kg (ou R$ X) por entrega; pode / não pode misturar blends e formatos]. Vende pouco ou ainda vai abrir? Conte no contato e a gente vê a melhor forma de atender.</p></div>
+        </details>
+        <details>
+          <summary>Vocês entregam na minha cidade? Em quanto tempo?</summary>
+          <div class="faq__answer"><p>Hoje atendemos [a confirmar: cidades / regiões]. O prazo é de [a confirmar: X dias úteis] depois do pedido confirmado, com entrega [a confirmar: semanal / quinzenal] em dia combinado. Está fora dessa área? Informe a sua cidade no WhatsApp ou no formulário que a gente verifica.</p></div>
+        </details>
+        <details>
+          <summary>Como o produto chega?</summary>
+          <div class="faq__answer"><p>Congelado, em embalagem fechada e identificada com lote, data de produção e validade. Os discos vêm separados por papel, para não grudarem, em caixas de [a confirmar: X kg]. O transporte é feito [a confirmar: em veículo refrigerado, com o produto mantido congelado].</p></div>
+        </details>
+        <details>
+          <summary>Qual é a validade?</summary>
+          <div class="faq__answer"><p>Congelado a −18 °C ou menos, na embalagem original, a validade é de [a confirmar: X meses]. Depois de descongelado na geladeira, use em até [a confirmar: X dias].</p></div>
+        </details>
+        <details>
+          <summary>O produto tem inspeção sanitária?</summary>
+          <div class="faq__answer"><p>Sim. A produção é feita sob inspeção oficial, registro [SIF/SIE/SIM nº 0000]. Se a vigilância sanitária ou o seu nutricionista pedirem, a gente envia a ficha técnica e os dados do registro.</p></div>
+        </details>
+        <details>
+          <summary>Vocês emitem nota fiscal? Como é o pagamento?</summary>
+          <div class="faq__answer"><p>[a confirmar: todo pedido sai com nota fiscal]. Pagamento por [a confirmar: Pix / boleto / cartão], [a confirmar: com prazo de X dias para clientes recorrentes].</p></div>
+        </details>
+        <details>
+          <summary>E se algum lote chegar fora do padrão?</summary>
+          <div class="faq__answer"><p>[a confirmar: política de troca. Ex.: avise em até X horas do recebimento, com foto da etiqueta, e a gente repõe ou credita no próximo pedido]. Como cada embalagem tem lote identificado, dá para rastrear exatamente o que aconteceu.</p></div>
+        </details>
+        <details>
+          <summary>Vocês garantem o fornecimento toda semana?</summary>
+          <div class="faq__answer"><p>Com pedido recorrente, a sua entrega entra na programação combinada. [a confirmar: como o abastecimento é garantido, ex.: estoque de segurança para clientes ativos; aviso com X dias de antecedência se houver mudança de prazo.]</p></div>
+        </details>
+        <details>
+          <summary>Preciso assinar contrato ou fidelidade?</summary>
+          <div class="faq__answer"><p>[a confirmar: não há fidelidade, você pede quando precisar / contrato de X meses para blend sob medida].</p></div>
+        </details>
+        <details>
+          <summary>Posso ter um blend só meu?</summary>
+          <div class="faq__answer"><p>Sim. No blend sob medida, a gente define com você os cortes, a proporção de gordura, a moagem e a gramatura, e testa na sua chapa até aprovar. A receita aprovada fica exclusiva para a sua casa. As condições (volume mínimo e prazo de desenvolvimento) são combinadas no contato.</p></div>
+        </details>
+        <details>
+          <summary>Vocês vendem para pessoa física?</summary>
+          <div class="faq__answer"><p>[a confirmar: atendemos apenas empresas com CNPJ (hamburguerias, restaurantes, dark kitchens e food trucks) / também vendemos para pessoa física, com pedido mínimo de X].</p></div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA FINAL -->
+  <section class="cta-band bg-red" aria-labelledby="lp-cta-titulo">
+    <svg class="iso-bg" viewBox="0 0 96 96" aria-hidden="true"><use href="#iso"/></svg>
+    <div class="container cta-band__inner">
+      <div data-reveal>
+        <h2 id="lp-cta-titulo">Prove na sua chapa.</h2>
+        <p>Peça sua amostra, teste com a sua equipe e descubra o blend que vai virar a assinatura da sua casa.</p>
+      </div>
+      <div class="cta-band__actions" data-reveal style="--d:.1s">
+        <a class="btn btn--white" href="#amostra">Pedir amostra</a>
+        <a class="btn btn--outline-white" href="https://wa.me/5500000000000?text=Ol%C3%A1%2C%20Meat%20Blend!%20Quero%20pedir%20uma%20amostra." target="_blank" rel="noopener"><svg class="icon" aria-hidden="true"><use href="#i-wa"/></svg>Chamar no WhatsApp<span class="sr-only"> (abre em nova aba)</span></a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="lp-footer">
+  <div class="container">
+    <img src="../assets/img/marca/logotipo-creme.svg" alt="meat blend" width="110" height="45" loading="lazy">
+    <p>© <span data-year>2026</span> Meat Blend · CNPJ 00.000.000/0001-00 · Registro [SIF/SIE/SIM nº 0000]</p>
+    <nav aria-label="Links do rodapé">
+      <a href="../index.html">Visitar o site</a>
+      <a href="../privacidade.html" target="_blank" rel="noopener">Política de privacidade<span class="sr-only"> (abre em nova aba)</span></a>
+    </nav>
+  </div>
+</footer>
+
+<nav class="mobile-cta" aria-label="Ações rápidas" data-mobile-cta>
+  <a class="btn btn--red" href="#amostra">Pedir amostra</a>
+  <a class="btn btn--outline-light" href="https://wa.me/5500000000000?text=Ol%C3%A1%2C%20Meat%20Blend!%20Quero%20pedir%20uma%20amostra." target="_blank" rel="noopener"><svg class="icon" aria-hidden="true"><use href="#i-wa"/></svg><span class="sr-only">Chamar no WhatsApp (abre em nova aba)</span></a>
+</nav>

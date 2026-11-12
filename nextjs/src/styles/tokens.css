@@ -1,0 +1,42 @@
+/* ==========================================================================
+   Tokens de design
+   Identidade: Guia visual Meat Blend (2024)
+   Cores: vermelho #CD3B44 · creme #EBE4E2 · preto · branco
+   Tipografia: Exo (marca/títulos) + Hanken Grotesk (textos)
+   As fontes chegam por next/font (src/app/fonts.ts) como --font-exo e --font-hanken.
+   ========================================================================== */
+
+:root {
+  /* Paleta oficial */
+  --red: #CD3B44;          /* RGB 205 59 68 · Pantone 1797 CP */
+  --cream: #EBE4E2;        /* RGB 235 228 226 · Pantone P 51-1 C */
+  --black: #000000;
+  --white: #FFFFFF;
+
+  /* Apoio (derivados do guia) */
+  --red-deep: #B3333B;     /* hover */
+  --red-ink: #B02E37;      /* vermelho para textos pequenos em fundo claro (AA) */
+  --wine: #5A2C33;         /* isotipo sobre carvão (capa do guia) */
+  --char: #232629;         /* carvão das aberturas do guia */
+  --char-2: #2C3034;
+  --night: #0B0B0C;
+  --paper: #F3F0EE;
+  --ink: #111213;
+
+  /* Tokens contextuais (mudam em fundos escuros/vermelhos) */
+  --muted: #5C5856;
+  --line: rgba(17, 18, 19, .12);
+  --line-strong: rgba(17, 18, 19, .24);
+  --eyebrow: var(--red-ink);
+  --accent: var(--red-ink);   /* papel 5,62 · creme 5,08 · branco 6,38 (FX-22) */
+
+  --f-display: var(--font-exo), "Exo", "Segoe UI", system-ui, sans-serif;
+  --f-body: var(--font-hanken), "Hanken Grotesk", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+
+  --maxw: 1240px;
+  --pad: clamp(16px, 4vw, 48px);
+  --sec: clamp(64px, 8vw, 120px);
+  --header-h: 84px;
+  --r: 6px;
+  --ease: cubic-bezier(.2, .7, .2, 1);
+}

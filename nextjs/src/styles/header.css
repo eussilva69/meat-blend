@@ -1,0 +1,77 @@
+/* ---------- Cabeçalho ---------- */
+.site-header {
+  position: fixed; inset: 0 0 auto; z-index: 50;
+  color: var(--cream);
+  transition: background-color .3s, box-shadow .3s;
+}
+.site-header.is-scrolled { background: rgba(35, 38, 41, .97); box-shadow: 0 1px 0 rgba(235, 228, 226, .1); }
+.site-header__bar { display: flex; align-items: center; justify-content: space-between; gap: 24px; height: var(--header-h); transition: height .3s; }
+.site-header.is-scrolled .site-header__bar { height: 68px; }
+.brand { position: relative; z-index: 2; display: block; flex: none; }
+.brand img { width: 118px; height: auto; transition: width .3s; }
+.site-header.is-scrolled .brand img { width: 104px; }
+
+.nav { display: flex; align-items: center; gap: 36px; }
+.nav ul { display: flex; gap: 28px; list-style: none; }
+.nav a:not(.btn) {
+  position: relative; display: inline-block; padding-block: 6px;
+  font-weight: 500; font-size: .9375rem; text-decoration: none; color: rgba(235, 228, 226, .8);
+  transition: color .2s;
+}
+.nav a:not(.btn)::after {
+  content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 2px; background: var(--red);
+  transform: scaleX(0); transform-origin: left; transition: transform .25s var(--ease);
+}
+.nav a:not(.btn):hover, .nav a[aria-current="page"] { color: var(--cream); }
+.nav a:not(.btn):hover::after, .nav a[aria-current="page"]::after { transform: scaleX(1); }
+.nav__extra { display: none; }
+
+.nav-toggle {
+  display: none; position: relative; z-index: 2;
+  width: 48px; height: 48px; margin-right: -10px;
+  align-items: center; justify-content: center; flex-direction: column; gap: 7px;
+  background: none; border: 0; cursor: pointer; color: var(--cream);
+}
+.nav-toggle span:not(.sr-only) { display: block; width: 26px; height: 2px; background: currentColor; transition: transform .3s var(--ease); }
+.nav-toggle[aria-expanded="true"] span:nth-child(1) { transform: translateY(4.5px) rotate(45deg); }
+.nav-toggle[aria-expanded="true"] span:nth-child(2) { transform: translateY(-4.5px) rotate(-45deg); }
+
+@media (max-width: 980px) {
+  .nav-toggle { display: inline-flex; }
+  .nav {
+    position: fixed; inset: 0; z-index: 1;
+    flex-direction: column; align-items: stretch; justify-content: flex-start; gap: 32px;
+    padding: calc(var(--header-h) + 32px) var(--pad) 32px;
+    background: var(--char); overflow-y: auto;
+    opacity: 0; visibility: hidden; transition: opacity .3s, visibility 0s linear .3s;
+  }
+  .nav.is-open { opacity: 1; visibility: visible; transition: opacity .3s; }
+  .nav ul { flex-direction: column; gap: 2px; }
+  .nav a:not(.btn) { font-family: var(--f-display); font-weight: 700; font-size: clamp(2rem, 8vw, 2.75rem); color: var(--cream); letter-spacing: -.02em; }
+  .nav a:not(.btn)::after { height: 3px; }
+  .nav .btn { align-self: flex-start; min-height: 54px; font-size: 1rem; }
+  .nav__extra { display: block; margin-top: auto; padding-top: 24px; border-top: 1px solid rgba(235, 228, 226, .14); color: rgba(235, 228, 226, .7); font-size: .9375rem; }
+  .nav__extra strong { color: var(--red); font-family: var(--f-display); }
+  body.nav-open { overflow: hidden; }
+  body.nav-open .site-header { background: var(--char); }
+}
+
+/* ---------- Melhorias (PLANO FX-06, FX-07, FX-22, FX-32) ---------- */
+/* Sem JS o cabeçalho tem fundo sólido (legível sobre seções claras); hidratado, fica
+   transparente no topo e ganha fundo ao rolar. */
+.site-header { background: rgba(35, 38, 41, .97); }
+.site-header.is-ready:not(.is-scrolled) { background: transparent; }
+
+/* CTA compacto no header do celular, fora do painel do menu */
+.header-cta { display: none; position: relative; z-index: 2; }
+@media (max-width: 980px) {
+  .header-cta { display: inline-flex; margin-left: auto; margin-right: 12px; }
+  body.nav-open .site-header { background: var(--char); }
+}
+@media (max-width: 359px) { .header-cta { display: none; } }
+
+/* Rodapé do painel do menu: valores em creme com "/" vermelho; WhatsApp como link */
+.nav__extra strong { color: var(--cream); }
+.nav__extra i { font-style: normal; color: var(--red); }
+.nav__extra a:not(.btn) { padding: 0; font-family: var(--f-body); font-size: inherit; font-weight: 500; letter-spacing: 0; color: inherit; text-decoration: underline; text-underline-offset: 3px; }
+.nav__extra a:not(.btn)::after { content: none; }

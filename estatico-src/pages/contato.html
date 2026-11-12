@@ -1,0 +1,92 @@
+title: Pedir amostra e tabela de preços | Meat Blend
+description: Conte sobre a sua hamburgueria e receba pelo WhatsApp o blend indicado, a tabela de preços e as condições de entrega para a sua região.
+active: contato
+canonical: contato.html
+crumb: Contato
+---
+<main id="conteudo">
+
+  <section class="lp-hero contact-hero dark">
+    <svg class="iso-bg" viewBox="0 0 96 96" aria-hidden="true"><use href="#iso"/></svg>
+    <div class="container lp-hero__grid">
+      <div>
+        <nav class="crumb" aria-label="Você está em"><a href="index.html">meat blend</a>/<span aria-current="page">contato</span></nav>
+        <h1 class="h1">Peça sua amostra.</h1>
+        <p class="lead">Conte sobre a sua hamburgueria. A gente responde pelo WhatsApp com o blend indicado, a tabela de preços e as condições de entrega para a sua região [a confirmar: prazo de resposta, ex.: em até 2 horas úteis].</p>
+      </div>
+
+      <div class="form-card" id="pedir-amostra">
+        <div class="form-card__head">
+          <h2>Peça amostra ou tabela de preços</h2>
+          <p>Leva menos de um minuto. O WhatsApp abre com a sua mensagem pronta: é só tocar em enviar.</p>
+          <p class="form__required">Os campos sem “(opcional)” são obrigatórios.</p>
+        </div>
+        <form class="form" data-wa-form novalidate data-subject="Pedido de amostra pelo site" data-intro="Olá, Meat Blend! Vim pelo site e quero receber amostra e preços dos blends.">
+          <div class="form__row">
+            <div class="field">
+              <label for="c-nome">Seu nome</label>
+              <input id="c-nome" name="nome" data-label="Nome" type="text" autocomplete="name" required data-error="Diga como podemos te chamar.">
+            </div>
+            <div class="field">
+              <label for="c-negocio">Nome do negócio</label>
+              <input id="c-negocio" name="negocio" data-label="Negócio" type="text" autocomplete="organization" placeholder="Hamburgueria, dark kitchen, food truck…" required data-error="Informe o nome do negócio (ou do projeto, se ainda vai abrir).">
+            </div>
+          </div>
+          <div class="form__row">
+            <div class="field">
+              <label for="c-cidade">Cidade / UF</label>
+              <input id="c-cidade" name="cidade" data-label="Cidade" type="text" autocomplete="address-level2" placeholder="Ex.: Curitiba / PR" required data-error="Informe cidade e UF para a gente checar a entrega.">
+            </div>
+            <div class="field">
+              <label for="c-volume">Burgers vendidos por mês <span class="optional">(opcional)</span></label>
+              <select id="c-volume" name="volume" data-label="Burgers por mês">
+                <option value="">Selecione</option>
+                <option>Até 500</option>
+                <option>De 500 a 1.500</option>
+                <option>De 1.500 a 3.000</option>
+                <option>Mais de 3.000</option>
+                <option>Ainda vou abrir</option>
+              </select>
+            </div>
+          </div>
+          <fieldset class="field">
+            <legend>Blends de interesse <span class="optional">(opcional)</span></legend>
+            <div class="checks">
+              <label class="check"><input type="checkbox" name="blend" value="Clássico" data-label="Blends de interesse"><span>Clássico</span></label>
+              <label class="check"><input type="checkbox" name="blend" value="Costela"><span>Costela</span></label>
+              <label class="check"><input type="checkbox" name="blend" value="Smash"><span>Smash</span></label>
+              <label class="check"><input type="checkbox" name="blend" value="Fraldinha"><span>Fraldinha</span></label>
+              <label class="check"><input type="checkbox" name="blend" value="Sob medida"><span>Sob medida</span></label>
+            </div>
+          </fieldset>
+          <div class="field">
+            <label for="c-msg">Mensagem <span class="optional">(opcional)</span></label>
+            <textarea id="c-msg" name="mensagem" data-label="Mensagem" placeholder="Ex.: smash duplo de 80 g, uns 400 burgers por semana, chapa a gás. Quero testar o Smash e o Costela."></textarea>
+          </div>
+          <button class="btn btn--red btn--block" type="submit"><svg class="icon" aria-hidden="true"><use href="#i-wa"/></svg>Pedir amostra pelo WhatsApp</button>
+          <p class="form__note">Seus dados servem só para este contato. Veja a <a href="privacidade.html">política de privacidade</a>. Sem WhatsApp neste aparelho? Escreva para <a href="mailto:contato@meatblend.com.br">contato@meatblend.com.br</a>.</p>
+          {{formstatus}}
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <section class="section bg-paper" aria-labelledby="canais-titulo">
+    <div class="container">
+      <div class="section-head" data-reveal>
+        <div>
+          <p class="eyebrow"><span class="eyebrow__num" aria-hidden="true">/</span>Canais</p>
+          <h2 class="h2" id="canais-titulo">Prefere falar direto?</h2>
+        </div>
+      </div>
+      <ul class="channels channels--grid" data-reveal>
+        <li><a href="https://wa.me/5500000000000?text=Ol%C3%A1%2C%20Meat%20Blend!" target="_blank" rel="noopener"><svg class="icon" aria-hidden="true"><use href="#i-wa"/></svg><div><small>WhatsApp comercial</small><strong>(00) 00000-0000</strong><span class="sr-only"> (abre em nova aba)</span></div><svg class="icon icon--arrow" aria-hidden="true"><use href="#i-arrow"/></svg></a></li>
+        <li><a href="mailto:contato@meatblend.com.br"><svg class="icon" aria-hidden="true"><use href="#i-mail"/></svg><div><small>E-mail</small><strong>contato@meatblend.com.br</strong></div><svg class="icon icon--arrow" aria-hidden="true"><use href="#i-arrow"/></svg></a></li>
+        <li><a href="https://instagram.com/meatblend" target="_blank" rel="noopener"><svg class="icon" aria-hidden="true"><use href="#i-ig"/></svg><div><small>Instagram</small><strong>@meatblend</strong><span class="sr-only"> (abre em nova aba)</span></div><svg class="icon icon--arrow" aria-hidden="true"><use href="#i-arrow"/></svg></a></li>
+        <li><div class="channel"><svg class="icon" aria-hidden="true"><use href="#i-pin"/></svg><div><small>Endereço</small><strong>Rua Exemplo, 000 – Bairro<br>Cidade – UF</strong></div></div></li>
+        <li><div class="channel"><svg class="icon" aria-hidden="true"><use href="#i-clock"/></svg><div><small>Atendimento</small><strong>Segunda a sexta, 8h às 18h</strong></div></div></li>
+      </ul>
+    </div>
+  </section>
+
+</main>
