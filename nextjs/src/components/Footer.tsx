@@ -40,7 +40,7 @@ export function Footer() {
             <ul className="footer-links">
               {footerBlends.map((item) => (
                 <li key={item.href}>
-                  <Link href={item.href}>{item.label}</Link>
+                  <Link href={item.href} scroll={false}>{item.label}</Link>
                 </li>
               ))}
             </ul>

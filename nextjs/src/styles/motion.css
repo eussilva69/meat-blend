@@ -5,6 +5,15 @@
 [data-reveal="pending"] { opacity: 0; transform: translateY(26px); }
 [data-reveal="pending"], [data-reveal="in"] { transition: opacity .9s var(--ease), transform .9s var(--ease); transition-delay: var(--d, 0s); }
 
+/* Seções apontadas diretamente por âncora (:target): sem animação ou deslocamento
+   para que a rolagem convirja no ponto exato sem salto ou sobressalto */
+:target [data-reveal],
+.blend-row:target [data-reveal] {
+  opacity: 1 !important;
+  transform: none !important;
+  transition: none !important;
+}
+
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   .marquee__track { animation: none; }

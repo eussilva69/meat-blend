@@ -95,6 +95,7 @@
   .pills-bar .pills a { min-height: 40px; padding: .35em .9em; font-size: .875rem; }
   .pills-bar .pills { -webkit-mask-image: linear-gradient(90deg, #000 85%, transparent); mask-image: linear-gradient(90deg, #000 85%, transparent); scroll-snap-type: x proximity; }
   .pills-bar .pills li { scroll-snap-align: start; }
+  .blend-row, .blend-row--red { scroll-margin-top: calc(var(--header-h) + 64px); }
 
   /* FX-33 · rodapé mais curto (a coluna "Blends" repete destinos) */
   .footer-grid > div:nth-child(3) { display: none; }
@@ -125,4 +126,5 @@
   .mobile-cta { position: static; transform: none; }
   .has-mobile-cta { padding-bottom: 0; }
   html { scroll-padding-top: 16px; }
+  .blend-row, .blend-row--red { scroll-margin-top: 24px; }
 }

@@ -545,7 +545,7 @@ fieldset.field { border: 0; margin: 0; padding: 0; }
 .calc__note { font-size: .875rem; color: var(--muted); line-height: 1.5; }
 
 /* ---------- Blends (página) ---------- */
-html:has(.pills-bar) { scroll-padding-top: 150px; }
+html:has(.pills-bar) { scroll-padding-top: 156px; }
 .pills-bar {
   position: sticky; top: 68px; z-index: 20;
   padding-block: 10px; background: var(--paper);
@@ -571,7 +571,12 @@ html:has(.pills-bar) { scroll-padding-top: 150px; }
 .spec-table tbody th { font-family: var(--f-display); font-weight: 700; }
 .spec-table td { font-variant-numeric: tabular-nums; }
 .spec-table a { color: var(--red-ink); font-weight: 700; }
-.blend-row { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(32px, 5vw, 88px); align-items: center; padding-block: clamp(56px, 7vw, 104px); border-top: 1px solid var(--line-strong); }
+.blend-row {
+  display: grid; grid-template-columns: 1fr 1fr; gap: clamp(32px, 5vw, 88px);
+  align-items: center; padding-block: clamp(56px, 7vw, 104px);
+  border-top: 1px solid var(--line-strong);
+  scroll-margin-top: calc(var(--header-h) + 76px);
+}
 .blend-row:first-child { border-top: 0; }
 .blend-row:nth-child(even) .blend-row__media { order: 2; }
 .blend-row__media { position: relative; aspect-ratio: 5 / 4; border-radius: var(--r); overflow: hidden; background: var(--char); }
@@ -586,6 +591,7 @@ html:has(.pills-bar) { scroll-padding-top: 150px; }
 .blend-row--red {
   background: var(--red); color: var(--white); border: 0; border-radius: var(--r);
   padding-inline: clamp(24px, 5vw, 72px); margin-top: clamp(24px, 3vw, 40px);
+  scroll-margin-top: calc(var(--header-h) + 76px);
   --muted: var(--white); --line-strong: rgba(255, 255, 255, .4); --eyebrow: var(--white);
 }
 .blend-row--red .blend-row__media { background: rgba(0, 0, 0, .1); display: grid; place-items: center; }
@@ -713,6 +719,7 @@ html:has(.pills-bar) { scroll-padding-top: 150px; }
 /* ---------- Animação de entrada ---------- */
 .js [data-reveal] { opacity: 0; transform: translateY(26px); transition: opacity .9s var(--ease), transform .9s var(--ease); transition-delay: var(--d, 0s); }
 .js [data-reveal].is-in { opacity: 1; transform: none; }
+:target [data-reveal], .blend-row:target [data-reveal] { opacity: 1 !important; transform: none !important; transition: none !important; }
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }

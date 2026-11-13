@@ -238,17 +238,71 @@
     sync();
   }
 
-  /* ---------- Blends: pílula do blend visível (scrollspy) ---------- */
+  /* ---------- Blends: pílula do blend visível (scrollspy e rolagem coordenada) ---------- */
   const pills = [...document.querySelectorAll('.pills-bar a[href^="#"]')];
-  if (pills.length && 'IntersectionObserver' in window) {
-    const spy = new IntersectionObserver((es) => es.forEach((e) => {
-      if (!e.isIntersecting) return;
-      pills.forEach((p) => {
-        const on = p.hash === `#${e.target.id}`;
-        if (on) { p.setAttribute('aria-current', 'true'); p.scrollIntoView({ inline: 'nearest', block: 'nearest' }); }
-        else p.removeAttribute('aria-current');
+  const pillsList = document.querySelector('.pills-bar .pills');
+  if (pills.length && pillsList) {
+    let isManualScrolling = false;
+    let manualTimer = null;
+
+    const scrollPillInBar = (pill) => {
+      const listRect = pillsList.getBoundingClientRect();
+      const pillRect = pill.getBoundingClientRect();
+      if (pillRect.left < listRect.left) {
+        pillsList.scrollBy({ left: pillRect.left - listRect.left - 16, behavior: 'smooth' });
+      } else if (pillRect.right > listRect.right) {
+        pillsList.scrollBy({ left: pillRect.right - listRect.right + 16, behavior: 'smooth' });
+      }
+    };
+
+    const scrollToTarget = (target) => {
+      const headerH = 68;
+      const pillsBar = document.querySelector('.pills-bar');
+      const pillsH = pillsBar ? pillsBar.offsetHeight : 64;
+      const clearance = headerH + pillsH + 16;
+      const targetTop = target.getBoundingClientRect().top + window.scrollY - clearance;
+      const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      window.scrollTo({
+        top: Math.max(0, Math.round(targetTop)),
+        behavior: prefersReducedMotion ? 'auto' : 'smooth',
       });
-    }), { rootMargin: '-45% 0px -50% 0px' });
-    pills.forEach((p) => { const target = document.querySelector(p.hash); if (target) spy.observe(target); });
+    };
+
+    pills.forEach((p) => {
+      p.addEventListener('click', (e) => {
+        const target = document.querySelector(p.hash);
+        if (!target) return;
+        e.preventDefault();
+        isManualScrolling = true;
+        pills.forEach((item) => {
+          if (item === p) {
+            item.setAttribute('aria-current', 'true');
+            scrollPillInBar(item);
+          } else {
+            item.removeAttribute('aria-current');
+          }
+        });
+        history.pushState(null, '', p.hash);
+        scrollToTarget(target);
+        clearTimeout(manualTimer);
+        manualTimer = setTimeout(() => { isManualScrolling = false; }, 850);
+      });
+    });
+
+    if ('IntersectionObserver' in window) {
+      const spy = new IntersectionObserver((es) => es.forEach((e) => {
+        if (!e.isIntersecting || isManualScrolling) return;
+        pills.forEach((p) => {
+          const on = p.hash === `#${e.target.id}`;
+          if (on) {
+            p.setAttribute('aria-current', 'true');
+            scrollPillInBar(p);
+          } else {
+            p.removeAttribute('aria-current');
+          }
+        });
+      }), { rootMargin: '-45% 0px -50% 0px' });
+      pills.forEach((p) => { const target = document.querySelector(p.hash); if (target) spy.observe(target); });
+    }
   }
 })();

@@ -53,7 +53,7 @@ export function BlendCard({ blend, linked = false, short = false }: BlendCardPro
   );
 
   return linked ? (
-    <Link className="blend-card" href={blendHref(blend)} aria-labelledby={titleId} aria-describedby={descId}>
+    <Link className="blend-card" href={blendHref(blend)} aria-labelledby={titleId} aria-describedby={descId} scroll={false}>
       {body}
     </Link>
   ) : (

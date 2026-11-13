@@ -1,5 +1,5 @@
 /* ---------- Blends (página) ---------- */
-html:has(.pills-bar) { scroll-padding-top: 150px; }
+html:has(.pills-bar) { scroll-padding-top: 156px; }
 .pills-bar {
   position: sticky; top: 68px; z-index: 20;
   padding-block: 16px; background: var(--white);
@@ -18,7 +18,12 @@ html:has(.pills-bar) { scroll-padding-top: 150px; }
 .pills a { border-radius: var(--r); }
 .pills a:hover { background: transparent; color: inherit; border-color: var(--ink); }
 .pills a[aria-current="true"] { background: var(--ink); border-color: var(--ink); color: var(--white); }
-.blend-row { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(32px, 5vw, 88px); align-items: center; padding-block: clamp(56px, 7vw, 104px); border-top: 1px solid var(--line-strong); }
+.blend-row {
+  display: grid; grid-template-columns: 1fr 1fr; gap: clamp(32px, 5vw, 88px);
+  align-items: center; padding-block: clamp(56px, 7vw, 104px);
+  border-top: 1px solid var(--line-strong);
+  scroll-margin-top: calc(var(--header-h) + 76px);
+}
 .blend-row:first-child { border-top: 0; }
 .blend-row:nth-child(even) .blend-row__media { order: 2; }
 .blend-row__media { position: relative; aspect-ratio: 5 / 4; border-radius: var(--r); overflow: hidden; background: var(--char); }
@@ -34,6 +39,7 @@ html:has(.pills-bar) { scroll-padding-top: 150px; }
 .blend-row--red {
   background: var(--red); color: var(--white); border: 0; border-radius: var(--r);
   padding-inline: clamp(24px, 5vw, 72px); margin-top: clamp(24px, 3vw, 40px);
+  scroll-margin-top: calc(var(--header-h) + 76px);
   --muted: var(--white); --line-strong: rgba(255, 255, 255, .4); --eyebrow: var(--white);
 }
 .blend-row--red .blend-row__num { color: var(--white); }
