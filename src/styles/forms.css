@@ -105,7 +105,7 @@ fieldset.field { border: 0; margin: 0; padding: 0; }
 .check input:checked + span::before { content: "✓"; margin-right: .45em; }
 
 /* FX-04/05 · âncora do formulário não fica sob o header */
-.form-card[id] { scroll-margin-top: calc(var(--header-h) + 16px); }
+.form-card[id] { scroll-margin-top: calc(var(--header-h) + 16px + env(safe-area-inset-top, 0px)); }
 .bg-paper .form-card { box-shadow: 0 0 0 1px var(--line), 0 24px 48px -32px rgba(0, 0, 0, .35); }
 
 /* FX-25 · simulador */

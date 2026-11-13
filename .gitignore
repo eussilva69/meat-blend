@@ -14,6 +14,8 @@ out/
 */out/
 build/
 /nextjs/
+/estatico/
+/estatico-src/
 
 # Misc
 .DS_Store

@@ -79,10 +79,14 @@
   font-size: clamp(1.75rem, 1.1rem + 2.8vw, 3.5rem); letter-spacing: -.02em;
   animation: marquee 38s linear infinite;
   will-change: transform;
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
 }
 .marquee__item { display: inline-flex; align-items: center; gap: .45em; padding-right: .45em; }
 .marquee__item i { font-style: normal; color: var(--cream); font-weight: 400; opacity: .9; }
-@keyframes marquee { to { transform: translateX(-50%); } }
+@keyframes marquee { to { transform: translate3d(-50%, 0, 0); } }
 
 /* ---------- Cabeçalho de seção ---------- */
 .section-head { display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 24px 48px; margin-bottom: clamp(40px, 5vw, 72px); }

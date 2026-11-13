@@ -1,12 +1,40 @@
 /* ---------- Cabeçalho ---------- */
 .site-header {
-  position: fixed; inset: 0 0 auto; z-index: 50;
-  width: 100%; max-width: 100vw;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: auto;
+  z-index: 50;
+  width: 100%;
+  max-width: 100vw;
+  padding-top: env(safe-area-inset-top, 0px);
   padding-left: env(safe-area-inset-left, 0px);
   padding-right: env(safe-area-inset-right, 0px);
   color: var(--cream);
+  background: rgba(35, 38, 41, .97);
   transition: background-color .3s, box-shadow .3s;
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  will-change: transform;
 }
+
+/* Sangria superior: estende o fundo do cabeçalho 100vh acima do topo (0px).
+   Impede qualquer fresta ou "desgrude" da barra durante o rubber-band / overscroll do celular */
+.site-header::before {
+  content: "";
+  position: absolute;
+  bottom: 100%;
+  left: 0;
+  right: 0;
+  height: 100vh;
+  background: inherit;
+  pointer-events: none;
+}
+
+.site-header.is-ready:not(.is-scrolled) { background: transparent; }
 .site-header.is-scrolled { background: rgba(35, 38, 41, .97); box-shadow: 0 1px 0 rgba(235, 228, 226, .1); }
 .site-header__bar { display: flex; align-items: center; justify-content: space-between; gap: 24px; height: var(--header-h); transition: height .3s; }
 .site-header.is-scrolled .site-header__bar { height: 68px; }
@@ -40,6 +68,17 @@
 .nav-toggle[aria-expanded="true"] span:nth-child(2) { transform: translateY(-4.5px) rotate(-45deg); }
 
 @media (max-width: 980px) {
+  :root { --header-h: 64px; }
+  .site-header__bar,
+  .site-header.is-scrolled .site-header__bar {
+    height: var(--header-h);
+    transition: none; /* Altura estável: sem salto ao rolar no celular */
+  }
+  .brand img,
+  .site-header.is-scrolled .brand img {
+    width: 104px;
+    transition: none; /* Logo com tamanho fixo e estável no celular */
+  }
   .nav-toggle { display: inline-flex; }
   .nav {
     position: fixed; inset: 0; z-index: 1;
@@ -49,6 +88,9 @@
     padding-left: max(var(--pad), env(safe-area-inset-left, 0px));
     padding-right: max(var(--pad), env(safe-area-inset-right, 0px));
     background: var(--char); overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior: contain;
+    touch-action: pan-y;
     opacity: 0; visibility: hidden; transition: opacity .3s, visibility 0s linear .3s;
   }
   .nav.is-open { opacity: 1; visibility: visible; transition: opacity .3s; }
@@ -58,24 +100,21 @@
   .nav .btn { align-self: flex-start; min-height: 54px; font-size: 1rem; }
   .nav__extra { display: block; margin-top: auto; padding-top: 24px; border-top: 1px solid rgba(235, 228, 226, .14); color: rgba(235, 228, 226, .7); font-size: .9375rem; }
   .nav__extra strong { color: var(--red); font-family: var(--f-display); }
-  body.nav-open { overflow: hidden; }
+  body.nav-open {
+    overflow: hidden;
+    touch-action: none;
+    overscroll-behavior: none;
+  }
   body.nav-open .site-header { background: var(--char); }
 }
-
-/* ---------- Melhorias (PLANO FX-06, FX-07, FX-22, FX-32) ---------- */
-/* Sem JS o cabeçalho tem fundo sólido (legível sobre seções claras); hidratado, fica
-   transparente no topo e ganha fundo ao rolar. */
-.site-header { background: rgba(35, 38, 41, .97); }
-.site-header.is-ready:not(.is-scrolled) { background: transparent; }
 
 /* CTA compacto no header do celular, fora do painel do menu */
 .header-cta { display: none; position: relative; z-index: 2; }
 @media (max-width: 980px) {
   .header-cta { display: inline-flex; margin-left: auto; margin-right: 12px; }
-  body.nav-open .site-header { background: var(--char); }
 }
 @media (max-width: 480px) {
-  .header-cta { padding: .42em .8em; font-size: .875rem; min-height: 40px; }
+  .header-cta { padding: .42em .8em; font-size: .875rem; min-height: 44px; }
 }
 @media (max-width: 360px) { .header-cta { display: none; } }
 

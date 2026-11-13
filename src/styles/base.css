@@ -1,6 +1,13 @@
 /* ---------- Base ---------- */
 *, *::before, *::after { box-sizing: border-box; }
-html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; scroll-padding-top: 88px; overflow-x: clip; }
+html {
+  background-color: var(--char);
+  -webkit-text-size-adjust: 100%;
+  scroll-behavior: smooth;
+  scroll-padding-top: calc(var(--header-h) + 16px + env(safe-area-inset-top, 0px));
+  overflow-x: clip;
+  overscroll-behavior-y: none;
+}
 body {
   margin: 0;
   font-family: var(--f-body);
@@ -10,7 +17,7 @@ body {
   background: var(--paper);
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
-  overflow-x: hidden;
+  overflow-x: clip;
   overflow-wrap: break-word;
 }
 img, svg, video { display: block; max-width: 100%; }

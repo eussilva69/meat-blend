@@ -52,8 +52,9 @@ export function BlendPills({ items }: { items: Pill[] }) {
       const isLowHeight = window.matchMedia('(max-height: 560px)').matches;
       let clearance = 24;
       if (!isLowHeight) {
-        // Quando a página é rolada, o cabeçalho comprime para 68px
-        const headerH = 68;
+        // Mede a altura real do cabeçalho na tela (incluindo safe-area e variações) e a barra de pílulas
+        const headerEl = document.querySelector<HTMLElement>('.site-header');
+        const headerH = headerEl ? headerEl.offsetHeight : 64;
         const pillsH = pillsBar ? pillsBar.offsetHeight : 64;
         clearance = headerH + pillsH + 16;
       }
