@@ -226,5 +226,5 @@ h2.footer-title { font-size: .75rem; line-height: 1.6; margin: 0 0 18px; letter-
 
 /* FX-18 · micro-UI em Hanken Grotesk; Exo fica em h1–h3, .display, .btn, .step__num,
    .timeline__num, .bigstat, .calc__big e na marquee. (No fim da cascata para vencer as regras de componente.) */
-.eyebrow, .tag, .chips li, .ratio__legend, .specs dt, .channels small, .calc__label, .footer-title,
+.eyebrow, .chips li, .ratio__legend, .specs dt, .channels small, .calc__label, .footer-title,
 .field > label, .field legend, .quick button, .pills a, .compare thead th, .tip__num, .form__required, .field__error { font-family: var(--f-body); }

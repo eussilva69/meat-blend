@@ -19,11 +19,26 @@
   background: var(--night); box-shadow: 0 40px 90px -40px rgba(0, 0, 0, .8);
 }
 .hero__media img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 60%; }
-.tag {
-  position: absolute; left: 16px; bottom: 16px;
-  background: var(--red); color: var(--white);
-  font-family: var(--f-display); font-weight: 700; font-size: .875rem; letter-spacing: .02em;
-  padding: .45em .8em; border-radius: 4px;
+/* ---------- Fita decorativa sobre foto (detalhe artesanal sem texto) ---------- */
+.photo-ribbon {
+  position: absolute; left: 0; bottom: 0; z-index: 2;
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 44px; height: 34px;
+  background: var(--red); color: var(--cream);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, .28);
+  pointer-events: none;
+}
+.photo-ribbon svg, .photo-ribbon__icon {
+  width: 20px; height: 20px; fill: currentColor; opacity: .95;
+}
+.photo-ribbon--corner {
+  left: auto; right: 0; top: 0; bottom: auto;
+}
+.photo-ribbon--stripe {
+  width: clamp(56px, 18%, 88px); height: 6px;
+  background: var(--red);
+  clip-path: polygon(0 0, calc(100% - 6px) 0, 100% 100%, 0 100%);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, .3);
 }
 .hero__facts {
   list-style: none; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(14px, 2vw, 24px);
@@ -209,10 +224,6 @@
 .hero .display { font-size: clamp(2.75rem, min(1.5rem + 5.4vw, 10.5vh), 6.5rem); }
 .hero__note { margin-top: 16px; font-size: .875rem; color: rgba(235, 228, 226, .72); }
 .hero__actions--inline { margin-top: 0; }
-
-/* FX-17 · tag sobre foto: etiqueta colada no canto, sem cara de botão */
-.tag { border-radius: 0; left: 0; bottom: 0; padding: 7px 12px; font: 700 .75rem/1.2 var(--f-body); letter-spacing: .14em; text-transform: uppercase; }
-.media-stack .tag { left: auto; right: 0; top: 0; bottom: auto; }
 
 /* FX-17 · trilha com cara de link */
 .crumb a, .page-hero .crumb a { text-decoration: underline; text-underline-offset: 3px; text-decoration-color: rgba(235, 228, 226, .4); }

@@ -1,7 +1,8 @@
 import Image from 'next/image';
-import type { CSSProperties, ReactNode } from 'react';
+import type { CSSProperties } from 'react';
 import type { ImageAsset } from '@/content/images';
 import { imageSizes } from '@/lib/imageSizes';
+import { PhotoRibbon, type PhotoRibbonVariant } from './PhotoRibbon';
 import { Reveal } from './Reveal';
 
 type MediaFrameProps = {
@@ -9,8 +10,8 @@ type MediaFrameProps = {
   alt: string;
   /** Proporção: padrão 4/5; square 1/1; tall 3/4; wide 3/2. */
   variant?: 'square' | 'tall' | 'wide';
-  /** Etiqueta vermelha no canto ("/rigorosa"). */
-  tag?: ReactNode;
+  /** Detalhe de fita visual vermelha (selo com isotipo, fita chanfrada ou canto). */
+  ribbon?: boolean | PhotoRibbonVariant;
   sizes?: string;
   /** object-position da foto (ex.: "50% 40%"). */
   position?: string;
@@ -21,12 +22,12 @@ type MediaFrameProps = {
   style?: CSSProperties;
 };
 
-/** Foto recortada com cantos arredondados e etiqueta opcional. */
+/** Foto recortada com cantos arredondados e fita vermelha decorativa. */
 export function MediaFrame({
   image,
   alt,
   variant,
-  tag,
+  ribbon,
   sizes = imageSizes.half,
   position,
   reveal = false,
@@ -34,6 +35,9 @@ export function MediaFrame({
   style,
 }: MediaFrameProps) {
   const className = variant ? `media-frame media-frame--${variant}` : 'media-frame';
+  const ribbonVariant: PhotoRibbonVariant | null =
+    ribbon === true ? 'seal' : typeof ribbon === 'string' ? ribbon : null;
+
   const content = (
     <>
       <Image
@@ -45,11 +49,7 @@ export function MediaFrame({
         style={position ? { objectPosition: position } : undefined}
         priority={priority}
       />
-      {tag ? (
-        <span className="tag" aria-hidden="true">
-          {tag}
-        </span>
-      ) : null}
+      {ribbonVariant ? <PhotoRibbon variant={ribbonVariant} /> : null}
     </>
   );
 

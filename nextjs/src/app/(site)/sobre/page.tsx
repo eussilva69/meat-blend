@@ -53,7 +53,7 @@ export default function SobrePage() {
           <MediaFrame
             image={photos.cortesCrus}
             alt="Dois cortes de carne bovina crua sobre tábua de madeira escura"
-            tag="/do corte à chapa"
+            ribbon="seal"
             reveal={0.1}
           />
         </div>

@@ -10,6 +10,7 @@ import { Iso } from '@/components/Iso';
 import { JsonLd } from '@/components/JsonLd';
 import { Marquee } from '@/components/Marquee';
 import { MediaFrame } from '@/components/MediaFrame';
+import { PhotoRibbon } from '@/components/PhotoRibbon';
 import { Pillars } from '@/components/Pillars';
 import { Reveal } from '@/components/Reveal';
 import { SectionHead } from '@/components/SectionHead';
@@ -70,9 +71,7 @@ export default function HomePage() {
                 sizes={imageSizes.hero}
                 priority
               />
-              <span className="tag" aria-hidden="true">
-                /exclusiva
-              </span>
+              <PhotoRibbon variant="seal" />
             </figure>
           </div>
           <ul className="hero__facts">
@@ -114,7 +113,7 @@ export default function HomePage() {
               image={photos.medalhoesCrus}
               alt="Porções de carne bovina crua sobre papel, com sal e pimenta ao lado"
               sizes={imageSizes.stackMain}
-              tag="/rigorosa"
+              ribbon="corner"
             />
             <div className="media-stack__small">
               <Image
@@ -187,7 +186,7 @@ export default function HomePage() {
             image={photos.burgersTrio}
             alt="Três hambúrgueres lado a lado em uma tábua com batatas fritas e molhos"
             variant="square"
-            tag="/exclusiva"
+            ribbon="stripe"
             reveal={0.1}
           />
         </div>

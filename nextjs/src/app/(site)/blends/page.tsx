@@ -26,7 +26,7 @@ export default function BlendsPage() {
         lead="Clássico, Costela, Smash e Fraldinha prontos para a chapa, ou um blend sob medida só da sua casa. Todos com gordura padronizada e gramatura exata, em disco, bolinha smash ou a granel."
         media={{
           image: { ...photos.medalhoesCrus4x3, alt: 'Porções de carne bovina crua sobre papel' },
-          tag: '/rigorosa',
+          ribbon: 'seal',
         }}
         num="/02"
       />

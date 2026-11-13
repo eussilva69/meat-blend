@@ -44,7 +44,7 @@ export default function QualidadePage() {
               image={photos.carneTemperos}
               alt="Peça de carne bovina crua sobre tábua, com pimenta, alho e alecrim"
               variant="tall"
-              tag="/rigorosa"
+              ribbon="stripe"
               position="50% 45%"
               style={{ marginTop: 36 }}
             />
@@ -59,7 +59,7 @@ export default function QualidadePage() {
           <MediaFrame
             image={photos.carneGelo}
             alt="Corte de carne bovina crua sobre gelo picado"
-            tag="/segura"
+            ribbon="seal"
             position="50% 40%"
             reveal
           />

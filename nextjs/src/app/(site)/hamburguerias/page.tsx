@@ -42,7 +42,7 @@ export default function HamburgueriasPage() {
             ...photos.burgersTrio4x3,
             alt: 'Três hambúrgueres lado a lado em uma tábua com batatas fritas e molhos',
           },
-          tag: '/exclusiva',
+          ribbon: 'seal',
         }}
         num="/03"
       />

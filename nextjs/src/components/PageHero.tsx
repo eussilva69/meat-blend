@@ -3,6 +3,7 @@ import type { ReactNode } from 'react';
 import type { ImageAsset } from '@/content/images';
 import { imageSizes } from '@/lib/imageSizes';
 import { Crumb } from './Crumb';
+import { PhotoRibbon, type PhotoRibbonVariant } from './PhotoRibbon';
 
 type PageHeroProps = {
   /** Trilha "meat blend/<crumb>". */
@@ -12,7 +13,7 @@ type PageHeroProps = {
   /** Botões abaixo do lead. */
   actions?: ReactNode;
   /** Foto de produto à direita (variante --media). É a candidata a LCP: carrega com prioridade. */
-  media?: { image: ImageAsset & { alt: string; position?: string }; tag: string };
+  media?: { image: ImageAsset & { alt: string; position?: string }; ribbon?: boolean | PhotoRibbonVariant };
   /** Numeral gigante no canto ("/02"). */
   num?: string;
   /** Versão baixa (política de privacidade). */
@@ -42,9 +43,7 @@ export function PageHero({ crumb, title, lead, actions, media, num, small = fals
               style={media.image.position ? { objectPosition: media.image.position } : undefined}
               priority
             />
-            <span className="tag" aria-hidden="true">
-              {media.tag}
-            </span>
+            <PhotoRibbon variant={typeof media.ribbon === 'string' ? media.ribbon : 'seal'} />
           </figure>
         ) : null}
       </div>

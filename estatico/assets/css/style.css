@@ -278,11 +278,26 @@ a, button, summary { -webkit-tap-highlight-color: transparent; }
   background: var(--night); box-shadow: 0 40px 90px -40px rgba(0, 0, 0, .8);
 }
 .hero__media img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 60%; }
-.tag {
-  position: absolute; left: 0; bottom: 0;
-  background: var(--red); color: var(--white);
-  font: 700 .75rem/1.2 var(--f-body); letter-spacing: .14em; text-transform: uppercase;
-  padding: 7px 12px; border-radius: 0;
+/* ---------- Fita decorativa sobre foto (detalhe artesanal sem texto) ---------- */
+.photo-ribbon {
+  position: absolute; left: 0; bottom: 0; z-index: 2;
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 44px; height: 34px;
+  background: var(--red); color: var(--cream);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, .28);
+  pointer-events: none;
+}
+.photo-ribbon svg, .photo-ribbon__icon {
+  width: 20px; height: 20px; fill: currentColor; opacity: .95;
+}
+.photo-ribbon--corner {
+  left: auto; right: 0; top: 0; bottom: auto;
+}
+.photo-ribbon--stripe {
+  width: clamp(56px, 18%, 88px); height: 6px;
+  background: var(--red);
+  clip-path: polygon(0 0, calc(100% - 6px) 0, 100% 100%, 0 100%);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, .3);
 }
 .hero__facts {
   list-style: none; display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;
@@ -348,7 +363,6 @@ a, button, summary { -webkit-tap-highlight-color: transparent; }
   box-shadow: 0 30px 60px -30px rgba(0, 0, 0, .45);
 }
 .media-stack__small img { width: 100%; height: 100%; object-fit: cover; }
-.media-stack .tag { left: auto; right: 0; top: 0; bottom: auto; }
 .media-frame--square img { object-position: 50% 72%; }
 
 /* ---------- Pilares ---------- */
@@ -752,7 +766,7 @@ html:has(.pills-bar) { scroll-padding-top: 156px; }
 .checklist .tbc, .channels .tbc { display: inline; margin: 0; color: inherit; }
 
 /* FX-18: micro-UI em Hanken Grotesk */
-.eyebrow, .tag, .chips li, .ratio__legend, .specs dt, .channels small, .calc__label, .footer-title,
+.eyebrow, .chips li, .ratio__legend, .specs dt, .channels small, .calc__label, .footer-title,
 .field > label, .field legend, .quick button, .pills a, .compare thead th, .tip__num, .form__required, .field__error { font-family: var(--f-body); }
 .compare thead th:last-child { font-family: var(--f-display); }
 
