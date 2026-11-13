@@ -1,13 +1,29 @@
 {
-  "name": "meat-blend",
+  "name": "meat-blend-site",
   "version": "1.0.0",
   "private": true,
-  "description": "Meat Blend - Site institucional e landing page em Next.js",
+  "description": "Site institucional e landing page da Meat Blend (Next.js App Router).",
   "scripts": {
-    "dev": "npm --prefix nextjs run dev",
-    "build": "npm --prefix nextjs run build",
-    "start": "npm --prefix nextjs run start",
-    "lint": "npm --prefix nextjs run lint",
-    "typecheck": "npm --prefix nextjs run typecheck"
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint",
+    "typecheck": "next typegen && tsc --noEmit"
+  },
+  "dependencies": {
+    "next": "16.4.6",
+    "react": "19.3.0",
+    "react-dom": "19.3.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "eslint": "^9",
+    "eslint-config-next": "16.4.6",
+    "typescript": "^5"
+  },
+  "engines": {
+    "node": ">=20.9.0"
   }
 }

@@ -13,6 +13,7 @@ coverage/
 out/
 */out/
 build/
+/nextjs/
 
 # Misc
 .DS_Store
