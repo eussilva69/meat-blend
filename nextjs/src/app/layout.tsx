@@ -42,7 +42,7 @@ export const viewport: Viewport = {
 
 export default function RootLayout({ children }: Readonly<{ children: ReactNode }>) {
   return (
-    <html lang="pt-BR" className={`${exo.variable} ${hanken.variable}`}>
+    <html lang="pt-BR" className={`${exo.variable} ${hanken.variable}`} data-scroll-behavior="smooth">
       <body>
         <a className="skip-link" href="#conteudo">
           Pular para o conteúdo
