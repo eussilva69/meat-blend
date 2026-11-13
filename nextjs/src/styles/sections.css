@@ -40,6 +40,9 @@
   padding-bottom: clamp(150px, 20vw, 260px);
 }
 .page-hero .crumb { margin-bottom: 28px; font-size: .9375rem; color: var(--muted); }
+.crumb__list { display: inline-flex; align-items: center; list-style: none; padding: 0; margin: 0; }
+.crumb__item { display: inline-flex; align-items: center; }
+.crumb__sep { margin-inline: 0.25em; color: var(--muted); opacity: .7; user-select: none; }
 .page-hero .crumb a { text-decoration: none; }
 .page-hero .crumb a:hover { color: var(--cream); }
 .page-hero .crumb span { color: var(--cream); }
@@ -56,12 +59,14 @@
 /* ---------- Faixa (marquee) ---------- */
 .marquee { background: var(--red); color: var(--white); overflow: hidden; padding-block: clamp(14px, 2vw, 22px); }
 .marquee__track {
-  display: flex; align-items: center; gap: .45em; width: max-content;
+  display: flex; align-items: center; width: max-content;
   font-family: var(--f-display); font-weight: 800; line-height: 1; white-space: nowrap;
   font-size: clamp(1.75rem, 1.1rem + 2.8vw, 3.5rem); letter-spacing: -.02em;
-  animation: marquee 32s linear infinite;
+  animation: marquee 38s linear infinite;
+  will-change: transform;
 }
-.marquee__track i { font-style: normal; color: var(--cream); font-weight: 400; opacity: .9; }
+.marquee__item { display: inline-flex; align-items: center; gap: .45em; padding-right: .45em; }
+.marquee__item i { font-style: normal; color: var(--cream); font-weight: 400; opacity: .9; }
 @keyframes marquee { to { transform: translateX(-50%); } }
 
 /* ---------- Cabeçalho de seção ---------- */

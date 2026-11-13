@@ -9,7 +9,11 @@ import { Reveal } from './Reveal';
 /** Número de um campo, aceitando vírgula decimal ("45,90", "1.500"). Vazio, zero ou inválido = NaN. */
 export const parseNum = (value: string): number => {
   let s = value.trim();
-  if (s.includes(',')) s = s.replace(/\./g, '').replace(',', '.');
+  if (s.includes(',')) {
+    s = s.replace(/\./g, '').replace(',', '.');
+  } else if (/^\d{1,3}(\.\d{3})+$/.test(s)) {
+    s = s.replace(/\./g, '');
+  }
   const v = Number.parseFloat(s);
   return Number.isFinite(v) && v > 0 ? v : Number.NaN;
 };

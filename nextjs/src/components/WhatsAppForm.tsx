@@ -324,7 +324,7 @@ export function WhatsAppForm({ config }: { config: WhatsAppFormConfig }) {
         {config.note.privacyAfter} {formStatus.noWhatsApp} <a href={mailtoLink}>{site.email}</a>.
       </p>
 
-      <div ref={statusRef} className="form__status" role="status" tabIndex={-1}>
+      <div ref={statusRef} className="form__status" role="status" aria-live="polite" tabIndex={-1}>
         {status ? <StatusBody status={status} /> : null}
       </div>
 

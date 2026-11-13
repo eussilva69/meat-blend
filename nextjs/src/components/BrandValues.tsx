@@ -10,7 +10,7 @@ export function BrandValues() {
           {i > 0 ? (
             <>
               {' '}
-              <i>/</i>{' '}
+              <i aria-hidden="true">/</i>{' '}
             </>
           ) : null}
           {value}

@@ -15,12 +15,15 @@ function scrollPillInContainer(list: HTMLUListElement, slug: string, smooth = tr
   const listRect = list.getBoundingClientRect();
   const pillRect = pill.getBoundingClientRect();
 
+  const prefersReducedMotion = typeof window !== 'undefined' && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const actualSmooth = smooth && !prefersReducedMotion;
+
   if (pillRect.left < listRect.left) {
     const delta = pillRect.left - listRect.left - 16;
-    list.scrollBy({ left: delta, behavior: smooth ? 'smooth' : 'auto' });
+    list.scrollBy({ left: delta, behavior: actualSmooth ? 'smooth' : 'auto' });
   } else if (pillRect.right > listRect.right) {
     const delta = pillRect.right - listRect.right + 16;
-    list.scrollBy({ left: delta, behavior: smooth ? 'smooth' : 'auto' });
+    list.scrollBy({ left: delta, behavior: actualSmooth ? 'smooth' : 'auto' });
   }
 }
 
@@ -90,26 +93,33 @@ export function BlendPills({ items }: { items: Pill[] }) {
 
   // Trata hash inicial ou navegação vinda de outra página (ex.: home -> /blends#costela)
   useEffect(() => {
+    let t1: ReturnType<typeof setTimeout> | undefined;
+    let t2: ReturnType<typeof setTimeout> | undefined;
+
     const checkHash = () => {
       const hash = window.location.hash.replace(/^#/, '');
       if (hash && items.some((item) => item.slug === hash)) {
         isManualScrolling.current = true;
         setActive(hash);
+        if (t1) clearTimeout(t1);
+        if (t2) clearTimeout(t2);
         // Aguarda a hidratação e acomodação do layout (fotos/fontes)
-        const timer = setTimeout(() => {
+        t1 = setTimeout(() => {
           scrollToSlug(hash, true);
-          const releaseTimer = setTimeout(() => {
+          t2 = setTimeout(() => {
             isManualScrolling.current = false;
           }, 850);
-          return () => clearTimeout(releaseTimer);
         }, 120);
-        return () => clearTimeout(timer);
       }
     };
 
     checkHash();
     window.addEventListener('hashchange', checkHash);
-    return () => window.removeEventListener('hashchange', checkHash);
+    return () => {
+      window.removeEventListener('hashchange', checkHash);
+      if (t1) clearTimeout(t1);
+      if (t2) clearTimeout(t2);
+    };
   }, [items, scrollToSlug]);
 
   // Se o usuário tocar ou rolar a roda do mouse durante a animação, libera o spy imediatamente
@@ -166,6 +176,12 @@ export function BlendPills({ items }: { items: Pill[] }) {
                 href={`#${slug}`}
                 aria-current={active === slug ? 'true' : undefined}
                 onClick={(e) => handlePillClick(e, slug)}
+                onKeyDown={(e) => {
+                  if (e.key === ' ') {
+                    e.preventDefault();
+                    handlePillClick(e as unknown as React.MouseEvent<HTMLAnchorElement>, slug);
+                  }
+                }}
               >
                 {name}
               </a>

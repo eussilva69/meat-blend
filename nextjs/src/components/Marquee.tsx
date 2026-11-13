@@ -1,5 +1,3 @@
-import { Fragment } from 'react';
-
 type MarqueeProps = {
   words: readonly string[];
   /**
@@ -13,16 +11,16 @@ type MarqueeProps = {
  * Faixa vermelha com palavras correndo. O texto é decorativo (aria-hidden).
  * Pausa no hover e no foco por CSS; com "reduzir movimento" a faixa fica estática.
  */
-export function Marquee({ words, repeat = 4 }: MarqueeProps) {
+export function Marquee({ words, repeat = 8 }: MarqueeProps) {
   const items = Array.from({ length: repeat }, () => words).flat();
   return (
-    <div className="marquee">
+    <div className="marquee" role="region" aria-label="Destaques">
       <div className="marquee__track" aria-hidden="true">
         {items.map((word, i) => (
-          <Fragment key={i}>
+          <span key={i} className="marquee__item">
             <span>{word}</span>
-            <i>/</i>
-          </Fragment>
+            <i aria-hidden="true">/</i>
+          </span>
         ))}
       </div>
     </div>

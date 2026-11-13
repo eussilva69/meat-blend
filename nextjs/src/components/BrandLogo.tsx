@@ -19,7 +19,7 @@ export function BrandLogo({ alt = '', width, height, eager = false }: BrandLogoP
       alt={alt}
       width={width}
       height={height}
-      loading={eager ? 'eager' : 'lazy'}
+      priority={eager}
       unoptimized
     />
   );

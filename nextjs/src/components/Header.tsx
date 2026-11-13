@@ -79,10 +79,23 @@ export function Header() {
 
   return (
     <HeaderShell>
-      <Link className="brand" href="/" aria-label={`${site.name}: página inicial`} onClick={close}>
+      <Link
+        className="brand"
+        href="/"
+        aria-label={`${site.name}: página inicial`}
+        onClick={close}
+        tabIndex={open ? -1 : undefined}
+        aria-hidden={open ? 'true' : undefined}
+      >
         <BrandLogo width={118} height={48} eager />
       </Link>
-      <Link className="btn btn--red btn--sm header-cta" href={headerCta.href} onClick={close}>
+      <Link
+        className="btn btn--red btn--sm header-cta"
+        href={headerCta.href}
+        onClick={close}
+        tabIndex={open ? -1 : undefined}
+        aria-hidden={open ? 'true' : undefined}
+      >
         {headerCta.label}
       </Link>
       <button

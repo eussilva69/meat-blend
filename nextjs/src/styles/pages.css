@@ -15,12 +15,11 @@ html:has(.pills-bar) { scroll-padding-top: 156px; }
 .pills-bar .pills a { white-space: nowrap; }
 .pills { list-style: none; display: flex; flex-wrap: wrap; gap: 8px; }
 .pills a {
-  display: inline-flex; align-items: center; min-height: 42px; padding: .5em 1.1em;
-  border: 1.5px solid var(--line-strong); border-radius: 999px; text-decoration: none;
+  display: inline-flex; align-items: center; min-height: 44px; padding: .5em 1.1em;
+  border: 1.5px solid var(--line-strong); border-radius: var(--r); text-decoration: none;
   font-family: var(--f-display); font-weight: 700; font-size: .9375rem;
   transition: background-color .2s, color .2s, border-color .2s;
 }
-.pills a { border-radius: var(--r); }
 .pills a:hover { background: transparent; color: inherit; border-color: var(--ink); }
 .pills a[aria-current="true"] { background: var(--ink); border-color: var(--ink); color: var(--white); }
 .blend-row {

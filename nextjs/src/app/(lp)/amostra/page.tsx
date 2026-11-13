@@ -57,7 +57,7 @@ export default function AmostraPage() {
         </div>
       </section>
 
-      <Marquee words={marqueeAudience} repeat={4} />
+      <Marquee words={marqueeAudience} repeat={8} />
 
       {/* O PROBLEMA */}
       <section className="section bg-paper" aria-labelledby="dores-titulo">

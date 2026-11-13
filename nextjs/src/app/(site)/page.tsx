@@ -86,7 +86,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <Marquee words={marqueeValues} repeat={4} />
+      <Marquee words={marqueeValues} repeat={8} />
 
       {/* A MARCA */}
       <section className="section bg-paper">
