@@ -68,7 +68,7 @@ export default function HomePage() {
                 width={photos.heroSmash.width}
                 height={photos.heroSmash.height}
                 sizes={imageSizes.hero}
-                preload
+                priority
               />
               <span className="tag" aria-hidden="true">
                 /exclusiva

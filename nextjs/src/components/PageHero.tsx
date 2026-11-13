@@ -40,7 +40,7 @@ export function PageHero({ crumb, title, lead, actions, media, num, small = fals
               height={media.image.height}
               sizes={imageSizes.pageHero}
               style={media.image.position ? { objectPosition: media.image.position } : undefined}
-              preload
+              priority
             />
             <span className="tag" aria-hidden="true">
               {media.tag}

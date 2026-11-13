@@ -6,7 +6,12 @@ import { Reveal } from '../Reveal';
 /** Tabela "Do jeito de sempre vs. meat blend" da landing page (rola na horizontal se faltar espaço). */
 export function CompareTable() {
   return (
-    <Reveal className="compare-wrap">
+    <Reveal
+      className="compare-wrap"
+      role="region"
+      aria-label="Tabela comparativa entre moer na casa e Meat Blend"
+      tabIndex={0}
+    >
       <table className="compare">
         <caption className="sr-only">
           Comparativo entre moer e porcionar a carne na casa e usar o blend da {site.nameLower}

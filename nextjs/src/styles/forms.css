@@ -1,6 +1,6 @@
 /* ---------- Formulários ---------- */
 .form { display: grid; gap: 18px; }
-.form__row { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+.form__row { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 18px; }
 .field { display: grid; gap: 8px; min-width: 0; }
 .field > label, .field legend { font-family: var(--f-display); font-weight: 700; font-size: .875rem; letter-spacing: .01em; padding: 0; }
 .field .optional { font-family: var(--f-body); font-weight: 400; color: var(--muted); }
@@ -23,7 +23,7 @@ fieldset.field { border: 0; margin: 0; padding: 0; }
 .check { position: relative; }
 .check input { position: absolute; opacity: 0; width: 1px; height: 1px; }
 .check span {
-  display: inline-flex; align-items: center; min-height: 42px; padding: .5em 1em;
+  display: inline-flex; align-items: center; min-height: 44px; padding: .5em 1em;
   border: 1.5px solid var(--line-strong); border-radius: 999px; cursor: pointer;
   font-weight: 600; font-size: .9375rem; transition: background-color .2s, border-color .2s, color .2s;
 }
@@ -64,7 +64,7 @@ fieldset.field { border: 0; margin: 0; padding: 0; }
 .channels { list-style: none; display: grid; gap: 0; border-top: 1px solid var(--line-strong); }
 .channels li { border-bottom: 1px solid var(--line-strong); }
 .channels a, .channels .channel {
-  display: grid; grid-template-columns: 44px 1fr auto; align-items: center; gap: 14px;
+  display: grid; grid-template-columns: 44px minmax(0, 1fr) auto; align-items: center; gap: 14px;
   padding: 20px 0; text-decoration: none;
 }
 .channels .icon { width: 28px; height: 28px; color: var(--red); }
@@ -74,7 +74,7 @@ fieldset.field { border: 0; margin: 0; padding: 0; }
 .channels a:hover .icon--arrow { transform: translateX(4px); }
 
 /* ---------- Calculadora ---------- */
-.calc { display: grid; grid-template-columns: 1.1fr .9fr; border-radius: var(--r); overflow: hidden; background: var(--white); }
+.calc { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, .9fr); border-radius: var(--r); overflow: hidden; background: var(--white); }
 .calc__inputs { display: grid; gap: 22px; padding: clamp(24px, 4vw, 52px); align-content: start; }
 .calc__out { display: grid; gap: 20px; align-content: center; padding: clamp(28px, 4vw, 52px); background: var(--char); color: var(--cream); --muted: rgba(235, 228, 226, .72); }
 .calc__label { font-family: var(--f-display); font-weight: 700; font-size: .8125rem; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); }

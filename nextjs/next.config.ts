@@ -21,6 +21,7 @@ const images: NextConfig['images'] = {
 const nextConfig: NextConfig = {
   reactStrictMode: true,
   poweredByHeader: false,
+  compress: true,
   images,
   ...(isStaticExport ? { output: 'export' as const, trailingSlash: true } : {}),
 };

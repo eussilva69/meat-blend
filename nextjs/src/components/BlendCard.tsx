@@ -67,7 +67,7 @@ export function BlendCard({ blend, linked = false, short = false }: BlendCardPro
  */
 export function BlendGrid({ blends, linked, short }: { blends: StandardBlend[]; linked?: boolean; short?: boolean }) {
   return (
-    <ul className="blend-grid" tabIndex={0} role="region" aria-label="Blends (role para o lado para ver todos)">
+    <ul className="blend-grid" aria-label="Blends de linha">
       {blends.map((blend, i) => (
         <Reveal as="li" key={blend.slug} delay={stagger(i, 0.06)}>
           <BlendCard blend={blend} linked={linked} short={short} />

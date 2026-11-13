@@ -10,7 +10,7 @@
   padding-bottom: clamp(40px, 5vw, 72px);
 }
 .hero .iso-bg { width: max(1100px, 92vw); left: -22%; bottom: -38%; }
-.hero__grid { display: grid; grid-template-columns: 1.12fr .88fr; gap: clamp(32px, 5vw, 80px); align-items: center; }
+.hero__grid { display: grid; grid-template-columns: minmax(0, 1.12fr) minmax(0, .88fr); gap: clamp(32px, 5vw, 80px); align-items: center; }
 .hero__copy .eyebrow { margin-bottom: 28px; }
 .hero__copy .lead { margin-top: 28px; }
 .hero__actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 40px; }
@@ -26,7 +26,7 @@
   padding: .45em .8em; border-radius: 4px;
 }
 .hero__facts {
-  list-style: none; display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;
+  list-style: none; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(14px, 2vw, 24px);
   margin-top: clamp(48px, 6vw, 80px); padding-top: 28px; border-top: 1px solid var(--line);
 }
 .fact strong { display: block; font-family: var(--f-display); font-size: 1.1875rem; color: var(--cream); line-height: 1.2; }
@@ -86,7 +86,7 @@
 .media-stack .tag { left: auto; right: 16px; bottom: auto; top: 16px; }
 
 /* ---------- Pilares ---------- */
-.pillars { list-style: none; display: grid; grid-template-columns: repeat(3, 1fr); border-top: 2px solid var(--ink); }
+.pillars { list-style: none; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); border-top: 2px solid var(--ink); }
 .pillar { padding: 32px clamp(16px, 3vw, 40px) 8px 0; }
 .pillar + .pillar { padding-left: clamp(16px, 3vw, 40px); border-left: 1px solid var(--line-strong); }
 .pillar__num { font-family: var(--f-display); font-weight: 700; font-size: .875rem; color: var(--eyebrow); }
@@ -94,7 +94,7 @@
 .pillar p { color: var(--muted); }
 
 /* ---------- Cards de blend ---------- */
-.blend-grid { list-style: none; display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+.blend-grid { list-style: none; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: clamp(14px, 1.8vw, 20px); }
 .blend-card {
   display: flex; flex-direction: column; height: 100%;
   background: var(--white); border-radius: var(--r); overflow: hidden;
@@ -144,8 +144,8 @@
 .checklist--sm .icon { width: 22px; height: 22px; }
 
 /* ---------- Passos ---------- */
-.steps { list-style: none; display: grid; grid-template-columns: repeat(4, 1fr); border-top: 1px solid var(--line-strong); }
-.steps--3 { grid-template-columns: repeat(3, 1fr); }
+.steps { list-style: none; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); border-top: 1px solid var(--line-strong); }
+.steps--3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 .step { position: relative; padding: 30px clamp(16px, 2.5vw, 32px) 0 0; }
 .step::before { content: ""; position: absolute; top: -2px; left: 0; width: 44px; height: 3px; background: var(--red); }
 .step__num { display: block; font-family: var(--f-display); font-weight: 800; font-size: clamp(2.5rem, 1.8rem + 2.4vw, 3.75rem); line-height: 1; letter-spacing: -.04em; color: var(--red); }
@@ -153,9 +153,9 @@
 .step p { color: var(--muted); font-size: 1rem; }
 
 /* ---------- Cards genéricos ---------- */
-.cards { list-style: none; display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
-.cards--2 { grid-template-columns: repeat(2, 1fr); }
-.cards--4 { grid-template-columns: repeat(4, 1fr); }
+.cards { list-style: none; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(14px, 2vw, 20px); }
+.cards--2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.cards--4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
 .card { display: flex; flex-direction: column; gap: 14px; height: 100%; padding: clamp(24px, 3vw, 36px); background: var(--white); border-radius: var(--r); }
 .card__icon { width: 44px; height: 44px; color: var(--red); }
 .card h3 { font-size: 1.4375rem; font-weight: 700; letter-spacing: -.015em; line-height: 1.15; }
@@ -245,10 +245,16 @@
 .step { border-top: 1px solid var(--line-strong); }
 
 /* FX-19 · faixa "Sob medida" abaixo da grade de blends */
-.blend-banner { display: grid; grid-template-columns: 96px 1fr auto; align-items: center; gap: 32px; margin-top: 20px;
+.blend-banner { display: grid; grid-template-columns: minmax(72px, 96px) minmax(0, 1fr) auto; align-items: center; gap: clamp(16px, 3vw, 32px); margin-top: 20px;
   padding: 28px 36px; border-radius: var(--r); text-decoration: none; color: var(--white); }
 .blend-banner img { width: 96px; height: auto; }
 .blend-banner h3 { font-size: 1.75rem; color: var(--white); }
 .blend-banner p { margin-top: 6px; }
 .blend-banner .link-arrow { color: var(--white); }
 @media (hover: hover) { a.blend-banner:hover .link-arrow .icon { transform: translateX(4px); } }
+
+/* ---------- Otimização de renderização e layout (Core Web Vitals) ---------- */
+.faq, .timeline, .site-footer {
+  content-visibility: auto;
+  contain-intrinsic-size: 1px 400px;
+}

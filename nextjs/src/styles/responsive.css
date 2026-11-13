@@ -42,12 +42,13 @@
   .channels a, .channels .channel { grid-template-columns: 36px 1fr auto; }
   .mobile-cta {
     display: flex; gap: 10px; position: fixed; left: 0; right: 0; bottom: 0; z-index: 40;
-    padding: 12px 16px calc(12px + env(safe-area-inset-bottom));
+    width: 100%; max-width: 100vw;
+    padding: 12px max(16px, env(safe-area-inset-right, 16px)) calc(12px + env(safe-area-inset-bottom, 0px)) max(16px, env(safe-area-inset-left, 16px));
     background: rgba(11, 11, 12, .96); box-shadow: 0 -1px 0 rgba(235, 228, 226, .1);
   }
   .mobile-cta .btn { flex: 1; min-height: 50px; }
   .mobile-cta .btn--outline-light { flex: 0 0 56px; padding: 0; }
-  .has-mobile-cta { padding-bottom: 76px; }
+  .has-mobile-cta { padding-bottom: calc(76px + env(safe-area-inset-bottom, 0px)); }
 }
 
 /* ==========================================================================
@@ -72,7 +73,7 @@
 
 @media (max-width: 640px) {
   /* FX-06 · foco não fica atrás da barra; WhatsApp do header da LP só com ícone */
-  html:has(.mobile-cta) { scroll-padding-bottom: 96px; }
+  html:has(.mobile-cta) { scroll-padding-bottom: calc(96px + env(safe-area-inset-bottom, 0px)); }
   .site-header .btn__label { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
   .site-header .btn--sm:has(.btn__label) { width: 44px; padding: 0; justify-content: center; }
 
@@ -90,9 +91,9 @@
   .blend-banner img { width: 56px; }
   .blend-banner .link-arrow { grid-column: 1 / -1; justify-self: start; }
 
-  /* FX-24 · atalhos compactos com pista de rolagem */
+  /* FX-24 · atalhos compactos com pista de rolagem (touch target acessível ≥ 44px) */
   .pills-bar { padding-block: 6px; }
-  .pills-bar .pills a { min-height: 40px; padding: .35em .9em; font-size: .875rem; }
+  .pills-bar .pills a { min-height: 44px; padding: .4em 1em; font-size: .875rem; }
   .pills-bar .pills { -webkit-mask-image: linear-gradient(90deg, #000 85%, transparent); mask-image: linear-gradient(90deg, #000 85%, transparent); scroll-snap-type: x proximity; }
   .pills-bar .pills li { scroll-snap-align: start; }
   .blend-row, .blend-row--red { scroll-margin-top: calc(var(--header-h) + 64px); }
@@ -107,10 +108,10 @@
 
 /* FX-11 · comparativo compacto e ajustes para celulares estreitos */
 @media (max-width: 480px) {
-  .display { font-size: clamp(2.2rem, 1.2rem + 5.4vw, 3.2rem); }
+  .display, .hero .display, .lp-hero .display { font-size: clamp(2.2rem, 1.2rem + 5.4vw, 3.2rem); }
   .h1 { font-size: clamp(2.2rem, 1.2rem + 5vw, 3.2rem); }
   .footer-grid { grid-template-columns: 1fr; gap: 32px; }
-  .footer-bottom { flex-direction: column; align-items: flex-start; gap: 12px; }
+  .footer-bottom { flex-direction: column; align-items: flex-start; gap: 12px; padding-bottom: max(26px, calc(26px + env(safe-area-inset-bottom, 0px))); }
 }
 
 @media (max-width: 400px) {
@@ -119,8 +120,17 @@
   .compare thead th { letter-spacing: .06em; }
 }
 
-/* FX-06 · telas baixas (celular deitado): nada fixo */
-@media (max-height: 500px) {
+/* Telas ultra-estreitas (320px–360px) ou zoom 400% */
+@media (max-width: 360px) {
+  .display, .hero .display, .lp-hero .display { font-size: clamp(1.85rem, 1rem + 4.5vw, 2.4rem); }
+  .h1 { font-size: clamp(1.85rem, 1rem + 4vw, 2.4rem); }
+  .h2 { font-size: clamp(1.6rem, 1.1rem + 2.5vw, 2.1rem); }
+  .page-hero__num { font-size: 6.5rem; }
+  .btn { padding: .75em 1.1em; font-size: .9375rem; }
+}
+
+/* FX-06 · telas baixas (celular deitado / zoom 150%–200% em laptops): nada fixo */
+@media (max-height: 560px) {
   .site-header { position: absolute; }
   .pills-bar { position: static; }
   .mobile-cta { position: static; transform: none; }

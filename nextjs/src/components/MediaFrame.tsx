@@ -16,6 +16,8 @@ type MediaFrameProps = {
   position?: string;
   /** Anima a entrada (data-reveal). Número = atraso em segundos. */
   reveal?: boolean | number;
+  /** Prioridade no carregamento (quando na 1ª dobra). */
+  priority?: boolean;
   style?: CSSProperties;
 };
 
@@ -28,6 +30,7 @@ export function MediaFrame({
   sizes = imageSizes.half,
   position,
   reveal = false,
+  priority = false,
   style,
 }: MediaFrameProps) {
   const className = variant ? `media-frame media-frame--${variant}` : 'media-frame';
@@ -40,6 +43,7 @@ export function MediaFrame({
         height={image.height}
         sizes={sizes}
         style={position ? { objectPosition: position } : undefined}
+        priority={priority}
       />
       {tag ? (
         <span className="tag" aria-hidden="true">

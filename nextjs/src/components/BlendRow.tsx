@@ -22,7 +22,7 @@ export function BlendRow({ blend, priority = false }: { blend: Blend; priority?:
             height={blend.image.height}
             sizes={imageSizes.row}
             style={blend.image.position ? { objectPosition: blend.image.position } : undefined}
-            loading={priority ? 'eager' : undefined}
+            priority={priority}
           />
         ) : (
           <Image src={blend.image.src} alt="" width={blend.image.width} height={blend.image.height} unoptimized />

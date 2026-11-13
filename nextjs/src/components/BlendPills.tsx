@@ -45,10 +45,15 @@ export function BlendPills({ items }: { items: Pill[] }) {
 
       const pillsBar = document.querySelector<HTMLElement>('.pills-bar');
 
-      // Quando a página é rolada, o cabeçalho comprime para 68px
-      const headerH = 68;
-      const pillsH = pillsBar ? pillsBar.offsetHeight : 64;
-      const clearance = headerH + pillsH + 16;
+      // Em telas baixas (≤560px, como celular em paisagem), o cabeçalho e as pílulas não são fixos
+      const isLowHeight = window.matchMedia('(max-height: 560px)').matches;
+      let clearance = 24;
+      if (!isLowHeight) {
+        // Quando a página é rolada, o cabeçalho comprime para 68px
+        const headerH = 68;
+        const pillsH = pillsBar ? pillsBar.offsetHeight : 64;
+        clearance = headerH + pillsH + 16;
+      }
       const targetTop = target.getBoundingClientRect().top + window.scrollY - clearance;
 
       const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
