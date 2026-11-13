@@ -308,13 +308,7 @@ a, button, summary { -webkit-tap-highlight-color: transparent; }
 
 /* ---------- Faixa (marquee) ---------- */
 .marquee { position: relative; background: var(--red); color: var(--white); overflow: hidden; padding-block: clamp(14px, 2vw, 22px); }
-.marquee:hover .marquee__track, .marquee:focus-within .marquee__track, .marquee.is-paused .marquee__track { animation-play-state: paused; }
-.marquee__toggle {
-  position: absolute; right: 12px; top: 50%; transform: translateY(-50%); display: grid; place-items: center;
-  width: 44px; height: 44px; padding: 0; border-radius: var(--r); border: 1.5px solid rgba(255, 255, 255, .7);
-  background: var(--red); color: var(--white); cursor: pointer;
-}
-.marquee__toggle .icon { width: 20px; height: 20px; }
+.marquee:hover .marquee__track, .marquee:focus-within .marquee__track { animation-play-state: paused; }
 .marquee__track {
   display: flex; align-items: center; gap: .45em; width: max-content;
   font-family: var(--f-display); font-weight: 800; line-height: 1; white-space: nowrap;
@@ -726,12 +720,11 @@ html:has(.pills-bar) { scroll-padding-top: 150px; }
   .js [data-reveal] { opacity: 1; transform: none; transition: none; }
   .nav.is-open { opacity: 1 !important; visibility: visible !important; }
   *, *::before, *::after { transition: none !important; }
-  .marquee__toggle { display: none; }
 }
 
 @media print {
   .js [data-reveal] { opacity: 1 !important; transform: none !important; }
-  .site-header, .mobile-cta, .marquee, .marquee__toggle { display: none; }
+  .site-header, .mobile-cta, .marquee { display: none; }
 }
 
 /* ==========================================================================

@@ -8,7 +8,6 @@
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   .marquee__track { animation: none; }
-  .marquee__toggle { display: none; }
   [data-reveal] { opacity: 1; transform: none; transition: none; }
   .nav.is-open { opacity: 1 !important; visibility: visible !important; }
   *, *::before, *::after { transition: none !important; }
@@ -17,5 +16,5 @@
 /* ---------- Impressão (FX-32) ---------- */
 @media print {
   [data-reveal] { opacity: 1 !important; transform: none !important; }
-  .site-header, .mobile-cta, .marquee, .marquee__toggle { display: none; }
+  .site-header, .mobile-cta, .marquee { display: none; }
 }

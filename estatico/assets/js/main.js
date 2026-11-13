@@ -74,17 +74,6 @@
   /* ---------- Ano no rodapé ---------- */
   document.querySelectorAll('[data-year]').forEach((el) => { el.textContent = String(new Date().getFullYear()); });
 
-  /* ---------- Faixa animada: pausar / retomar ---------- */
-  const PAUSE = 'M7 5h3v14H7zM14 5h3v14h-3z';
-  const PLAY = 'M8 5v14l11-7z';
-  document.querySelectorAll('.marquee__toggle').forEach((b) => b.addEventListener('click', () => {
-    const on = b.getAttribute('aria-pressed') !== 'true';
-    b.setAttribute('aria-pressed', String(on));
-    b.closest('.marquee').classList.toggle('is-paused', on);
-    b.querySelector('.sr-only').textContent = on ? 'Retomar a faixa animada' : 'Pausar a faixa animada';
-    b.querySelector('path').setAttribute('d', on ? PLAY : PAUSE);
-  }));
-
   /* ---------- Pré-seleção via URL (ex.: contato.html?blend=Smash) ---------- */
   params.forEach((value, key) => {
     document.querySelectorAll(`form [name="${CSS.escape(key)}"]`).forEach((field) => {
