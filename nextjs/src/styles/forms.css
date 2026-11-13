@@ -80,7 +80,7 @@ fieldset.field { border: 0; margin: 0; padding: 0; }
 .calc__label { font-family: var(--f-display); font-weight: 700; font-size: .8125rem; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); }
 .calc__big { font-family: var(--f-display); font-weight: 800; font-size: clamp(3rem, 2rem + 4vw, 5rem); line-height: 1; letter-spacing: -.04em; color: var(--cream); font-variant-numeric: tabular-nums; }
 .calc__rows { display: grid; gap: 0; }
-.calc__row { display: flex; justify-content: space-between; gap: 16px; padding-block: 14px; border-top: 1px solid rgba(235, 228, 226, .14); }
+.calc__row { display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 6px 16px; padding-block: 14px; border-top: 1px solid rgba(235, 228, 226, .14); }
 .calc__row strong { font-family: var(--f-display); font-variant-numeric: tabular-nums; }
 .quick { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 2px; }
 .quick button {

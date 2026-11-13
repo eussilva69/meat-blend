@@ -11,7 +11,7 @@ type MarqueeProps = {
  * Faixa vermelha com palavras correndo. O texto é decorativo (aria-hidden).
  * Pausa no hover e no foco por CSS; com "reduzir movimento" a faixa fica estática.
  */
-export function Marquee({ words, repeat = 8 }: MarqueeProps) {
+export function Marquee({ words, repeat = 12 }: MarqueeProps) {
   const items = Array.from({ length: repeat }, () => words).flat();
   return (
     <div className="marquee" role="region" aria-label="Destaques">

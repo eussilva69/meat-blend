@@ -103,7 +103,6 @@
   box-shadow: 0 30px 60px -30px rgba(0, 0, 0, .45);
 }
 .media-stack__small img { width: 100%; height: 100%; object-fit: cover; }
-.media-stack .tag { left: auto; right: 16px; bottom: auto; top: 16px; }
 
 /* ---------- Pilares ---------- */
 .pillars { list-style: none; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); border-top: 2px solid var(--ink); }
@@ -219,14 +218,23 @@
    Melhorias (PLANO)
    ========================================================================== */
 
-/* FX-09 · isotipo do hero da home à direita, atrás da foto, fora do texto; display limitado pela altura */
-.hero .iso-bg { width: min(1180px, 82vw); left: auto; right: -23%; top: -13%; bottom: auto; }
+/* FX-09 · isotipo do hero da home à direita, atrás da foto; ancorado na coluna de mídia em ultrawide */
+.hero .iso-bg {
+  width: clamp(800px, 60vw, 1180px);
+  left: auto;
+  right: max(-140px, calc((100vw - min(100vw, var(--maxw) + var(--pad) * 2)) / 2 - 140px));
+  top: -13%;
+  bottom: auto;
+}
 .hero .display { font-size: clamp(2.75rem, min(1.5rem + 5.4vw, 10.5vh), 6.5rem); }
 .hero__note { margin-top: 16px; font-size: .875rem; color: rgba(235, 228, 226, .72); }
 .hero__actions--inline { margin-top: 0; }
 
-/* FX-17 · trilha com cara de link */
-.crumb a, .page-hero .crumb a { text-decoration: underline; text-underline-offset: 3px; text-decoration-color: rgba(235, 228, 226, .4); }
+/* FX-17 · trilha com cara de link e touch target confortável */
+.crumb a, .page-hero .crumb a {
+  display: inline-flex; align-items: center; min-height: 36px; padding-block: 4px;
+  text-decoration: underline; text-underline-offset: 3px; text-decoration-color: rgba(235, 228, 226, .4);
+}
 
 /* FX-23 · heros internos compactos; variante com foto de produto */
 .page-hero { padding-top: calc(var(--header-h) + clamp(32px, 4vw, 64px)); padding-bottom: clamp(96px, 11vw, 160px); }

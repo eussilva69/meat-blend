@@ -126,12 +126,12 @@
   .h1 { font-size: clamp(1.85rem, 1rem + 4vw, 2.4rem); }
   .h2 { font-size: clamp(1.6rem, 1.1rem + 2.5vw, 2.1rem); }
   .page-hero__num { font-size: 6.5rem; }
-  .btn { padding: .75em 1.1em; font-size: .9375rem; }
+  .btn { padding: .75em 1.1em; font-size: .9375rem; white-space: normal; text-align: center; }
 }
 
 /* FX-06 · telas baixas (celular deitado / zoom 150%–200% em laptops): nada fixo */
 @media (max-height: 560px) {
-  .site-header { position: absolute; }
+  .site-header { position: sticky; top: 0; }
   .pills-bar { position: static; }
   .mobile-cta { position: static; transform: none; }
   .has-mobile-cta { padding-bottom: 0; }
