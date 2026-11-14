@@ -7,6 +7,22 @@
 - **Repositório:** `D:\PROJETOS CLAUDE\MEAT BLEND`
 - **Valores da Marca:** Exclusiva / Rigorosa / Segura.
 
+---
+
+## 1.1 MAPEAMENTO DE PASTAS & ARQUIVOS-CHAVE (MIRA A LASER)
+
+> **ATENÇÃO IA:** Consulte esta tabela antes de realizar qualquer busca no repositório. Nunca faça varreduras cegas de pastas; acesse diretamente os caminhos mapeados abaixo:
+
+| Diretório / Caminho | Finalidade / O que contém | Arquivos e Pontos de Entrada Críticos |
+|---|---|---|
+| `src/app/` | Rotas de páginas, layouts e pontos de navegação | `fonts.ts`, `globals.css`, `layout.tsx`, `not-found.tsx` |
+| `src/components/` | Componentes reutilizáveis UI (subpastas: lp) | Design system e blocos de interface |
+| `src/lib/` | Utilitários, clientes e integrações (lib) | `attribution.ts`, `format.ts`, `imageLoader.ts`, `imageSizes.ts` |
+| `src/hooks/` | Custom hooks React para gerenciamento de estado e ciclo de vida | Hooks |
+| `public/` | Recursos estáticos servidos diretamente (logos, imagens, ícones) | Imagens e assets |
+| Raiz (`./`) | Configurações de ambiente, manifesto de pacotes e inicialização | `package.json`, `next.config.ts` |
+
+
 ## 2. Decisões Arquiteturais e Stack
 - **Arquitetura Next.js Padrão (App Router):**
   - Aplicação 100% Next.js 16.4.6 estruturada na raiz do repositório (App Router + Turbopack, React 19, TypeScript 5 estrito, ESLint 9).
